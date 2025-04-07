@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:paper"
+    },
+    "C": {
+      "tag": "c:circuits/basic"
+    },
+    "P": {
+      "item": "voltaic:gaspipeuninsulatedsteel"
+    },
+    "V": {
+      "item": "voltaic:mechanicalvalve"
+    }
+  },
+  "pattern": [
+    " C ",
+    "VPV",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:gaspipefilter"
+  }
+}

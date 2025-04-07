@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:coalgenerator",
+  "criteria": {
+    "HasGrinder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:mineralgrinder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.mineralgrinder.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:mineralgrinder"
+    },
+    "title": {
+      "color": "gold",
+      "translate": "advancement.voltaic.mineralgrinder.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasGrinder"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  }
+}

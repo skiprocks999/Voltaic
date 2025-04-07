@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "voltaic:battery"
+    },
+    "C": {
+      "tag": "c:circuits/basic"
+    },
+    "M": {
+      "item": "voltaic:motor"
+    },
+    "S": {
+      "tag": "c:plates/steel"
+    },
+    "b": {
+      "item": "minecraft:crossbow"
+    }
+  },
+  "pattern": [
+    " S ",
+    "SbC",
+    " MB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:mechanizedcrossbow"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "voltaic:resourceblockchromium"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "voltaic:ingotchromium"
+  }
+}

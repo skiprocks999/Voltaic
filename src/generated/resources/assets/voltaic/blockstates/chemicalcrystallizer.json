@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaic:block/chemicalcrystallizer"
+    },
+    "facing=north": {
+      "model": "voltaic:block/chemicalcrystallizer",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaic:block/chemicalcrystallizer",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaic:block/chemicalcrystallizer",
+      "y": 180
+    }
+  }
+}

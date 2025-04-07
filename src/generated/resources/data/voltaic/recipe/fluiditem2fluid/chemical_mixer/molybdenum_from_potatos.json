@@ -1,0 +1,24 @@
+{
+  "type": "voltaic:chemical_mixer_recipe",
+  "fluidinputs": [
+    {
+      "amount": 100,
+      "tag": "c:sulfuric_acid"
+    }
+  ],
+  "group": "voltaic",
+  "iteminputs": [
+    {
+      "count": 4,
+      "ingredient": {
+        "tag": "c:crops/potato"
+      }
+    }
+  ],
+  "output": {
+    "amount": 250,
+    "id": "voltaic:fluidsulfatemolybdenum"
+  },
+  "ticks": 200,
+  "usagepertick": 400.0
+}

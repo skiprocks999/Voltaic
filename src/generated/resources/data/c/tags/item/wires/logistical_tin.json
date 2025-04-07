@@ -1,11 +1,11 @@
 {
   "values": [
-    "electrodynamics:wirelogisticstinblack",
-    "electrodynamics:wirelogisticstinred",
-    "electrodynamics:wirelogisticstinwhite",
-    "electrodynamics:wirelogisticstingreen",
-    "electrodynamics:wirelogisticstinblue",
-    "electrodynamics:wirelogisticstinyellow",
-    "electrodynamics:wirelogisticstinbrown"
+    "voltaic:wirelogisticstinblack",
+    "voltaic:wirelogisticstinred",
+    "voltaic:wirelogisticstinwhite",
+    "voltaic:wirelogisticstingreen",
+    "voltaic:wirelogisticstinblue",
+    "voltaic:wirelogisticstinyellow",
+    "voltaic:wirelogisticstinbrown"
   ]
 }

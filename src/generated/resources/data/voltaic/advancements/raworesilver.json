@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:ores",
+  "criteria": {
+    "HasRawOre": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:raworesilver"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.rawsilver.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:raworesilver"
+    },
+    "title": {
+      "color": "gray",
+      "translate": "advancement.voltaic.rawsilver.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasRawOre"
+    ]
+  ],
+  "rewards": {
+    "experience": 10
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "voltaic:coil"
+    },
+    "I": {
+      "tag": "c:ingots/iron"
+    },
+    "S": {
+      "tag": "c:ingots/steel"
+    },
+    "W": {
+      "item": "voltaic:wirecopper"
+    }
+  },
+  "pattern": [
+    "ISI",
+    "W C",
+    "SIS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:downgradetransformer"
+  }
+}

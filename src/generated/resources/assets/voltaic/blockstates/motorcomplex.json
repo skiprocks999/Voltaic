@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaic:block/motorcomplexbase"
+    },
+    "facing=north": {
+      "model": "voltaic:block/motorcomplexbase",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaic:block/motorcomplexbase",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaic:block/motorcomplexbase",
+      "y": 180
+    }
+  }
+}

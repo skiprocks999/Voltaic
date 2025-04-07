@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube",
+  "inventory": {
+    "parent": "voltaic:block/wire/wireceramicinsulatedirongreen_side"
+  },
+  "loader": "voltaic:electrodynamicscableloader",
+  "none": {
+    "parent": "voltaic:block/wire/wireceramicinsulatedirongreen_none"
+  },
+  "render_type": "minecraft:cutout",
+  "wire": {
+    "parent": "voltaic:block/wire/wireceramicinsulatedirongreen_side"
+  }
+}

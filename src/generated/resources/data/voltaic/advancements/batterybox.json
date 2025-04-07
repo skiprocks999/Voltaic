@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:coalgenerator",
+  "criteria": {
+    "HasBatteryBox": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:batterybox"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.batterybox.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:batterybox"
+    },
+    "title": {
+      "color": "gold",
+      "translate": "advancement.voltaic.batterybox.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasBatteryBox"
+    ]
+  ],
+  "rewards": {
+    "experience": 30
+  }
+}

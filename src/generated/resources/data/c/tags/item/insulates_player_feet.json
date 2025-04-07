@@ -1,7 +1,7 @@
 {
   "values": [
-    "electrodynamics:rubberboots",
-    "electrodynamics:compositearmorboots",
-    "electrodynamics:combatarmorboots"
+    "voltaic:rubberboots",
+    "voltaic:compositearmorboots",
+    "voltaic:combatarmorboots"
   ]
 }

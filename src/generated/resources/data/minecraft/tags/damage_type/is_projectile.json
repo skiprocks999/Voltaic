@@ -1,7 +1,7 @@
 {
   "values": [
-    "electrodynamics:accelerated_bolt",
-    "electrodynamics:accelerated_bolt_ignorearmor",
-    "electrodynamics:plasma_bolt"
+    "voltaic:accelerated_bolt",
+    "voltaic:accelerated_bolt_ignorearmor",
+    "voltaic:plasma_bolt"
   ]
 }

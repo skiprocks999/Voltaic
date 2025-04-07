@@ -1,0 +1,9 @@
+{
+  "parent": "voltaic:parent/logisticswire_side",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "insulation": "voltaic:block/wire/logisticswireinsulation_side",
+    "particle": "#insulation",
+    "redstone": "voltaic:block/wire/logisticswireredstone_side"
+  }
+}

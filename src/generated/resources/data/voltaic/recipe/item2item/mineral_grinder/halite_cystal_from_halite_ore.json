@@ -1,0 +1,19 @@
+{
+  "type": "voltaic:mineral_grinder_recipe",
+  "experience": 0.10000000149011612,
+  "group": "voltaic",
+  "iteminputs": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ores/salt"
+      }
+    }
+  ],
+  "output": {
+    "count": 3,
+    "id": "voltaic:crystalhalite"
+  },
+  "ticks": 200,
+  "usagepertick": 350.0
+}

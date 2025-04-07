@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:ores",
+  "criteria": {
+    "HasRawOre": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:raworethorium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.rawthorium.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:raworethorium"
+    },
+    "title": {
+      "color": "gray",
+      "translate": "advancement.voltaic.rawthorium.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasRawOre"
+    ]
+  ],
+  "rewards": {
+    "experience": 10
+  }
+}

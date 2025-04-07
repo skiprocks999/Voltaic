@@ -1,6 +1,6 @@
 {
   "values": [
-    "electrodynamics:orelead",
-    "electrodynamics:deepslateorelead"
+    "voltaic:orelead",
+    "voltaic:deepslateorelead"
   ]
 }

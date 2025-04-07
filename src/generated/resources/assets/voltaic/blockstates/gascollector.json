@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "voltaic:block/gascollector"
+    },
+    "lit=true": {
+      "model": "voltaic:block/gascollectoron"
+    }
+  }
+}

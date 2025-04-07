@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "voltaic:glassclear"
+    },
+    "S": {
+      "tag": "c:plates/stainlesssteel"
+    },
+    "T": {
+      "item": "voltaic:tanksteel"
+    }
+  },
+  "pattern": [
+    "SGS",
+    "GTG",
+    "SGS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:tankreinforced"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaic:block/wiremill"
+    },
+    "facing=north": {
+      "model": "voltaic:block/wiremill",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaic:block/wiremill",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaic:block/wiremill",
+      "y": 180
+    }
+  }
+}

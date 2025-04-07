@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaic:block/windmillbase"
+    },
+    "facing=north": {
+      "model": "voltaic:block/windmillbase",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaic:block/windmillbase",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaic:block/windmillbase",
+      "y": 180
+    }
+  }
+}

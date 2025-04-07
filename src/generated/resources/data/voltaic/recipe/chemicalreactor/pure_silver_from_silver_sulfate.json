@@ -1,0 +1,27 @@
+{
+  "type": "voltaic:chemical_reactor_recipe",
+  "fluidbi": [
+    {
+      "amount": 150,
+      "chance": 1.0,
+      "fluid": "voltaic:fluidsulfuricacid"
+    }
+  ],
+  "fluidinputs": [
+    {
+      "amount": 200,
+      "tag": "c:sulfates/silver"
+    },
+    {
+      "amount": 1000,
+      "tag": "minecraft:water"
+    }
+  ],
+  "fluidoutput": {
+    "amount": 200,
+    "id": "voltaic:fluidpuremineralsilver"
+  },
+  "group": "voltaic",
+  "ticks": 200,
+  "usagepertick": 800.0
+}

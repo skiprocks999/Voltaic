@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "addontankneighborstatus=bottomandtoptank": {
+      "model": "voltaic:block/compressoraddontanktab"
+    },
+    "addontankneighborstatus=bottomtank": {
+      "model": "voltaic:block/compressoraddontankb"
+    },
+    "addontankneighborstatus=none": {
+      "model": "voltaic:block/compressoraddontank"
+    },
+    "addontankneighborstatus=toptank": {
+      "model": "voltaic:block/compressoraddontankt"
+    }
+  }
+}

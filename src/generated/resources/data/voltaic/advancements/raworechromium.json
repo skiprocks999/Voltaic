@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:ores",
+  "criteria": {
+    "HasRawOre": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:raworechromium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.rawchromium.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:raworechromium"
+    },
+    "title": {
+      "color": "gray",
+      "translate": "advancement.voltaic.rawchromium.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasRawOre"
+    ]
+  ],
+  "rewards": {
+    "experience": 10
+  }
+}

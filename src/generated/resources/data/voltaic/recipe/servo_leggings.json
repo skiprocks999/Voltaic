@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "voltaic:battery"
+    },
+    "C": {
+      "tag": "c:circuits/basic"
+    },
+    "M": {
+      "item": "voltaic:motor"
+    },
+    "P": {
+      "tag": "c:plates/steel"
+    },
+    "W": {
+      "tag": "c:wires/insulated_copper"
+    }
+  },
+  "pattern": [
+    "PCP",
+    "MWM",
+    "B B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:servoleggings"
+  }
+}

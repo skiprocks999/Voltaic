@@ -1,0 +1,16 @@
+{
+  "type": "voltaic:electrolosis_chamber_recipe",
+  "fluidinputs": [
+    {
+      "amount": 1,
+      "fluid": "voltaic:fluidimpuremineraliron"
+    }
+  ],
+  "group": "voltaic",
+  "output": {
+    "amount": 1,
+    "id": "voltaic:fluidpuremineraliron"
+  },
+  "ticks": 0,
+  "usagepertick": 0.0
+}

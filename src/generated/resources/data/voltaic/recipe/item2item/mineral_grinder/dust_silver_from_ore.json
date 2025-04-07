@@ -1,0 +1,28 @@
+{
+  "type": "voltaic:mineral_grinder_recipe",
+  "experience": 0.5,
+  "group": "voltaic",
+  "itembi": [
+    {
+      "chance": 0.1,
+      "item": {
+        "count": 1,
+        "id": "minecraft:cobblestone"
+      }
+    }
+  ],
+  "iteminputs": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ores/silver"
+      }
+    }
+  ],
+  "output": {
+    "count": 2,
+    "id": "voltaic:dustsilver"
+  },
+  "ticks": 200,
+  "usagepertick": 350.0
+}

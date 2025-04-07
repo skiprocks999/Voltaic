@@ -1,6 +1,6 @@
 {
   "values": [
-    "electrodynamics:oreniter",
-    "electrodynamics:deepslateoreniter"
+    "voltaic:oreniter",
+    "voltaic:deepslateoreniter"
   ]
 }

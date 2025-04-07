@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaic:block/gaspipefilter"
+    },
+    "facing=north": {
+      "model": "voltaic:block/gaspipefilter",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaic:block/gaspipefilter",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaic:block/gaspipefilter",
+      "y": 180
+    }
+  }
+}

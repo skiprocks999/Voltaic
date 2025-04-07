@@ -1,0 +1,16 @@
+{
+  "type": "voltaic:chemical_crystallizer_recipe",
+  "fluidinputs": [
+    {
+      "amount": 200,
+      "tag": "c:puremineral/gold"
+    }
+  ],
+  "group": "voltaic",
+  "output": {
+    "count": 1,
+    "id": "voltaic:crystalgold"
+  },
+  "ticks": 200,
+  "usagepertick": 800.0
+}

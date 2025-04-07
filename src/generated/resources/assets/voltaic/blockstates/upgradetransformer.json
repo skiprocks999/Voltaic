@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaic:block/upgradetransformer"
+    },
+    "facing=north": {
+      "model": "voltaic:block/upgradetransformer",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaic:block/upgradetransformer",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaic:block/upgradetransformer",
+      "y": 180
+    }
+  }
+}

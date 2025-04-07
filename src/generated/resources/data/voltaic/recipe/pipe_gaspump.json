@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "tag": "c:circuits/basic"
+    },
+    "M": {
+      "item": "voltaic:motor"
+    },
+    "P": {
+      "item": "voltaic:gaspipeuninsulatedsteel"
+    },
+    "V": {
+      "item": "voltaic:mechanicalvalve"
+    }
+  },
+  "pattern": [
+    " C ",
+    "VPV",
+    " M "
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:gaspipepump"
+  }
+}

@@ -1,11 +1,11 @@
 {
   "values": [
-    "electrodynamics:wirehighlyinsulatedcopperblack",
-    "electrodynamics:wirehighlyinsulatedcopperred",
-    "electrodynamics:wirehighlyinsulatedcopperwhite",
-    "electrodynamics:wirehighlyinsulatedcoppergreen",
-    "electrodynamics:wirehighlyinsulatedcopperblue",
-    "electrodynamics:wirehighlyinsulatedcopperyellow",
-    "electrodynamics:wirehighlyinsulatedcopperbrown"
+    "voltaic:wirehighlyinsulatedcopperblack",
+    "voltaic:wirehighlyinsulatedcopperred",
+    "voltaic:wirehighlyinsulatedcopperwhite",
+    "voltaic:wirehighlyinsulatedcoppergreen",
+    "voltaic:wirehighlyinsulatedcopperblue",
+    "voltaic:wirehighlyinsulatedcopperyellow",
+    "voltaic:wirehighlyinsulatedcopperbrown"
   ]
 }

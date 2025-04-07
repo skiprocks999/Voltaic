@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:coalgenerator",
+  "criteria": {
+    "HasPanel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:solarpanel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.solarpanel.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:solarpanel"
+    },
+    "title": {
+      "color": "blue",
+      "translate": "advancement.voltaic.solarpanel.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasPanel"
+    ]
+  ],
+  "rewards": {
+    "experience": 25
+  }
+}

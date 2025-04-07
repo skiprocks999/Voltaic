@@ -1,0 +1,36 @@
+{
+  "criteria": {
+    "HasCraftingTable": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:crafting_table"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "description": {
+      "translate": "advancement.voltaic.root.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:downgradetransformer"
+    },
+    "title": {
+      "color": "aqua",
+      "translate": "advancement.voltaic.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasCraftingTable"
+    ]
+  ],
+  "rewards": {
+    "experience": 10
+  }
+}

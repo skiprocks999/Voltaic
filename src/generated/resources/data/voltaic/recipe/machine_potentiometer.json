@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:plates/aluminum"
+    },
+    "C": {
+      "item": "voltaic:ceramicplate"
+    },
+    "G": {
+      "tag": "minecraft:coals"
+    }
+  },
+  "pattern": [
+    "ACA",
+    "CGC",
+    "ACA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:potentiometer"
+  }
+}

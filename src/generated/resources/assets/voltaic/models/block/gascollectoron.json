@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "voltaic:block/gascollector_bottom",
+    "east": "voltaic:block/gascollector_fanon",
+    "north": "voltaic:block/gascollector_fanon",
+    "particle": "voltaic:block/multisubnode",
+    "south": "voltaic:block/gascollector_back",
+    "up": "voltaic:block/gascollector_fanon",
+    "west": "voltaic:block/gascollector_fanon"
+  }
+}

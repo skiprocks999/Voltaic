@@ -1,6 +1,6 @@
 {
   "values": [
-    "electrodynamics:orefluorite",
-    "electrodynamics:deepslateorefluorite"
+    "voltaic:orefluorite",
+    "voltaic:deepslateorefluorite"
   ]
 }

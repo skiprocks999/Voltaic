@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "voltaic:glassaluminum"
+    },
+    "C": {
+      "tag": "c:circuits/advanced"
+    },
+    "F": {
+      "item": "voltaic:gastanksteel"
+    },
+    "G": {
+      "tag": "c:gears/tin"
+    },
+    "M": {
+      "item": "voltaic:motor"
+    },
+    "P": {
+      "item": "voltaic:gastanksteel"
+    },
+    "W": {
+      "item": "voltaic:wiresilver"
+    }
+  },
+  "pattern": [
+    "GFG",
+    "CAM",
+    "WPW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:chemicalreactor"
+  }
+}

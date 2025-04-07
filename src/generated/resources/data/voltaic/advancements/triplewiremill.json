@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:doublewiremill",
+  "criteria": {
+    "HasMill": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:wiremilltriple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.triplewiremill.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:wiremilltriple"
+    },
+    "title": {
+      "color": "red",
+      "translate": "advancement.voltaic.triplewiremill.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasMill"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

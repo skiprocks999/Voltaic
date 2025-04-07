@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "facing=east,manipulatorheatingstatus=cool": {
+      "model": "voltaic:block/advancedthermoelectricmanipulatorcool",
+      "y": 180
+    },
+    "facing=east,manipulatorheatingstatus=heat": {
+      "model": "voltaic:block/advancedthermoelectricmanipulatorheat",
+      "y": 180
+    },
+    "facing=east,manipulatorheatingstatus=off": {
+      "model": "voltaic:block/advancedthermoelectricmanipulator",
+      "y": 180
+    },
+    "facing=north,manipulatorheatingstatus=cool": {
+      "model": "voltaic:block/advancedthermoelectricmanipulatorcool",
+      "y": 90
+    },
+    "facing=north,manipulatorheatingstatus=heat": {
+      "model": "voltaic:block/advancedthermoelectricmanipulatorheat",
+      "y": 90
+    },
+    "facing=north,manipulatorheatingstatus=off": {
+      "model": "voltaic:block/advancedthermoelectricmanipulator",
+      "y": 90
+    },
+    "facing=south,manipulatorheatingstatus=cool": {
+      "model": "voltaic:block/advancedthermoelectricmanipulatorcool",
+      "y": 270
+    },
+    "facing=south,manipulatorheatingstatus=heat": {
+      "model": "voltaic:block/advancedthermoelectricmanipulatorheat",
+      "y": 270
+    },
+    "facing=south,manipulatorheatingstatus=off": {
+      "model": "voltaic:block/advancedthermoelectricmanipulator",
+      "y": 270
+    },
+    "facing=west,manipulatorheatingstatus=cool": {
+      "model": "voltaic:block/advancedthermoelectricmanipulatorcool"
+    },
+    "facing=west,manipulatorheatingstatus=heat": {
+      "model": "voltaic:block/advancedthermoelectricmanipulatorheat"
+    },
+    "facing=west,manipulatorheatingstatus=off": {
+      "model": "voltaic:block/advancedthermoelectricmanipulator"
+    }
+  }
+}

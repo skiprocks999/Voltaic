@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "c:storage_blocks/stainlesssteel"
+    },
+    "C": {
+      "tag": "c:circuits/elite"
+    },
+    "L": {
+      "item": "voltaic:lithiumbattery"
+    },
+    "P": {
+      "tag": "c:plates/stainlesssteel"
+    },
+    "R": {
+      "tag": "c:rods/stainlesssteel"
+    },
+    "S": {
+      "item": "voltaic:wiresuperconductive"
+    },
+    "X": {
+      "item": "voltaic:upgradetransformer"
+    }
+  },
+  "pattern": [
+    "CXS",
+    "LPR",
+    "BCS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:railgunkinetic"
+  }
+}

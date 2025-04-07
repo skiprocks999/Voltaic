@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:ores",
+  "criteria": {
+    "HasRawOre": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:raworetitanium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.rawtitanium.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:raworetitanium"
+    },
+    "title": {
+      "color": "gray",
+      "translate": "advancement.voltaic.rawtitanium.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasRawOre"
+    ]
+  ],
+  "rewards": {
+    "experience": 10
+  }
+}

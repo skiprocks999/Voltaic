@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:lithiumbatterybox",
+  "criteria": {
+    "HasBatteryBox": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:carbynebatterybox"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.carbynebatterybox.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:carbynebatterybox"
+    },
+    "title": {
+      "color": "red",
+      "translate": "advancement.voltaic.carbynebatterybox.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasBatteryBox"
+    ]
+  ],
+  "rewards": {
+    "experience": 150
+  }
+}

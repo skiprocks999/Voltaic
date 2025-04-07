@@ -1,0 +1,28 @@
+{
+  "type": "voltaic:mineral_crusher_recipe",
+  "experience": 0.10000000149011612,
+  "group": "voltaic",
+  "itembi": [
+    {
+      "chance": 1.0,
+      "item": {
+        "count": 1,
+        "id": "voltaic:oxidechromiumdisilicide"
+      }
+    }
+  ],
+  "iteminputs": [
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "voltaic:plasticfibers"
+      }
+    }
+  ],
+  "output": {
+    "count": 2,
+    "id": "voltaic:sheetplastic"
+  },
+  "ticks": 200,
+  "usagepertick": 450.0
+}

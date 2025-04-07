@@ -1,11 +1,11 @@
 {
   "values": [
-    "electrodynamics:wireceramicinsulatedsilverblack",
-    "electrodynamics:wireceramicinsulatedsilverred",
-    "electrodynamics:wireceramicinsulatedsilverwhite",
-    "electrodynamics:wireceramicinsulatedsilvergreen",
-    "electrodynamics:wireceramicinsulatedsilverblue",
-    "electrodynamics:wireceramicinsulatedsilveryellow",
-    "electrodynamics:wireceramicinsulatedsilverbrown"
+    "voltaic:wireceramicinsulatedsilverblack",
+    "voltaic:wireceramicinsulatedsilverred",
+    "voltaic:wireceramicinsulatedsilverwhite",
+    "voltaic:wireceramicinsulatedsilvergreen",
+    "voltaic:wireceramicinsulatedsilverblue",
+    "voltaic:wireceramicinsulatedsilveryellow",
+    "voltaic:wireceramicinsulatedsilverbrown"
   ]
 }

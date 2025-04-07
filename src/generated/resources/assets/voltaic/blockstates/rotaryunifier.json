@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaic:block/rotaryunifier"
+    },
+    "facing=north": {
+      "model": "voltaic:block/rotaryunifier",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaic:block/rotaryunifier",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaic:block/rotaryunifier",
+      "y": 180
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "c:storage_blocks/hslasteel"
+    },
+    "C": {
+      "tag": "c:circuits/ultimate"
+    },
+    "L": {
+      "item": "voltaic:carbynebattery"
+    },
+    "P": {
+      "tag": "c:plates/hslasteel"
+    },
+    "R": {
+      "tag": "c:rods/titaniumcarbide"
+    },
+    "S": {
+      "item": "voltaic:wiresuperconductive"
+    },
+    "X": {
+      "item": "voltaic:upgradetransformer"
+    }
+  },
+  "pattern": [
+    "CXS",
+    "LPR",
+    "BCS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:railgunplasma"
+  }
+}

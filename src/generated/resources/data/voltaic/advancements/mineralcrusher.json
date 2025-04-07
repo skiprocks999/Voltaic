@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:coalgenerator",
+  "criteria": {
+    "HasCrusher": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:mineralcrusher"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.mineralcrusher.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:mineralcrusher"
+    },
+    "title": {
+      "color": "gold",
+      "translate": "advancement.voltaic.mineralcrusher.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasCrusher"
+    ]
+  ],
+  "rewards": {
+    "experience": 30
+  }
+}

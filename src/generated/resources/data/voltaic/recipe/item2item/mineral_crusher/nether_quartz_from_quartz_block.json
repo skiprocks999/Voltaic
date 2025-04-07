@@ -1,0 +1,18 @@
+{
+  "type": "voltaic:mineral_crusher_recipe",
+  "group": "voltaic",
+  "iteminputs": [
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:quartz_block"
+      }
+    }
+  ],
+  "output": {
+    "count": 4,
+    "id": "minecraft:quartz"
+  },
+  "ticks": 200,
+  "usagepertick": 450.0
+}

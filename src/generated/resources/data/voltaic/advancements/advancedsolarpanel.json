@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:solarpanel",
+  "criteria": {
+    "HasPanel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:advancedsolarpanel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.advancedsolarpanel.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:advancedsolarpanel"
+    },
+    "title": {
+      "color": "dark_blue",
+      "translate": "advancement.voltaic.advancedsolarpanel.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasPanel"
+    ]
+  ],
+  "rewards": {
+    "experience": 75
+  }
+}

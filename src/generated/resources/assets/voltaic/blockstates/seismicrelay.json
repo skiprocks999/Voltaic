@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaic:block/seismicrelay"
+    },
+    "facing=north": {
+      "model": "voltaic:block/seismicrelay",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaic:block/seismicrelay",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaic:block/seismicrelay",
+      "y": 180
+    }
+  }
+}

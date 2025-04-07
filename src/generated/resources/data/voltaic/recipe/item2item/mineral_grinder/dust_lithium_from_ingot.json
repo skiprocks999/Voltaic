@@ -1,0 +1,18 @@
+{
+  "type": "voltaic:mineral_grinder_recipe",
+  "group": "voltaic",
+  "iteminputs": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ingots/lithium"
+      }
+    }
+  ],
+  "output": {
+    "count": 1,
+    "id": "voltaic:dustlithium"
+  },
+  "ticks": 200,
+  "usagepertick": 350.0
+}

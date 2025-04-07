@@ -1,6 +1,6 @@
 {
   "values": [
-    "electrodynamics:oremolybdenum",
-    "electrodynamics:deepslateoremolybdenum"
+    "voltaic:oremolybdenum",
+    "voltaic:deepslateoremolybdenum"
   ]
 }

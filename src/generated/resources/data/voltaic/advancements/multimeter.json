@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:basicwiring",
+  "criteria": {
+    "HasMeter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:multimeter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.multimeter.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:multimeter"
+    },
+    "title": {
+      "color": "gray",
+      "translate": "advancement.voltaic.multimeter.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasMeter"
+    ]
+  ],
+  "rewards": {
+    "experience": 10
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:plates/aluminum"
+    },
+    "C": {
+      "item": "voltaic:ceramicplate"
+    },
+    "E": {
+      "tag": "c:circuits/elite"
+    },
+    "T": {
+      "item": "voltaic:titaniumheatcoil"
+    }
+  },
+  "pattern": [
+    "ACA",
+    "CTC",
+    "AEA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:energizedalloyer"
+  }
+}

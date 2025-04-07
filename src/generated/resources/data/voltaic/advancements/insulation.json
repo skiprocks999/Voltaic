@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:basicwiring",
+  "criteria": {
+    "HasInsulation": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:insulation"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.insulation.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:wireinsulatedcopperblack"
+    },
+    "title": {
+      "color": "gray",
+      "translate": "advancement.voltaic.insulatedwiring.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasInsulation"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  }
+}

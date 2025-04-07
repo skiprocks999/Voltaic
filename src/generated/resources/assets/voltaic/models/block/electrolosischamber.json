@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "voltaic:block/multiblock/electrolosischamberbulkhead",
+    "east": "voltaic:block/multiblock/electrolosischamberbulkhead",
+    "north": "voltaic:block/electrolosischamberfront",
+    "particle": "voltaic:block/multisubnode",
+    "south": "voltaic:block/multiblock/electrolosischambercontacts",
+    "up": "voltaic:block/multiblock/electrolosischamberbulkhead",
+    "west": "voltaic:block/multiblock/electrolosischamberbulkhead"
+  }
+}

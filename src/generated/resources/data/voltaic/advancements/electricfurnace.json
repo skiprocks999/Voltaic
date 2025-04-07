@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:coalgenerator",
+  "criteria": {
+    "HasFurnace": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:electricfurnace"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.electricfurnace.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:electricfurnace"
+    },
+    "title": {
+      "color": "gold",
+      "translate": "advancement.voltaic.electricfurnace.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasFurnace"
+    ]
+  ],
+  "rewards": {
+    "experience": 30
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:coalgenerator",
+  "criteria": {
+    "HasThermoGenerator": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:thermoelectricgenerator"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.thermoelectricgenerator.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:thermoelectricgenerator"
+    },
+    "title": {
+      "color": "red",
+      "translate": "advancement.voltaic.thermoelectricgenerator.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasThermoGenerator"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "voltaic:motor"
+    },
+    "P": {
+      "tag": "c:plates/stainlesssteel"
+    },
+    "S": {
+      "tag": "c:plates/steel"
+    },
+    "V": {
+      "item": "voltaic:mechanicalvalve"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "PMV",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:gascollector"
+  }
+}

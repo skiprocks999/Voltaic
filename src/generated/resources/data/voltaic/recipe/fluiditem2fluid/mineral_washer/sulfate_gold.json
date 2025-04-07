@@ -1,0 +1,24 @@
+{
+  "type": "voltaic:mineral_washer_recipe",
+  "fluidinputs": [
+    {
+      "amount": 1000,
+      "tag": "c:sulfuric_acid"
+    }
+  ],
+  "group": "voltaic",
+  "iteminputs": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "minecraft:gold_ores"
+      }
+    }
+  ],
+  "output": {
+    "amount": 1000,
+    "id": "voltaic:fluidsulfategold"
+  },
+  "ticks": 200,
+  "usagepertick": 400.0
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "voltaic:parent/ceramicinsulatedwire_none",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "conductor": "voltaic:block/wire/copper_center",
+    "insulation": "voltaic:block/wire/insulationceramic_center_base",
+    "particle": "#insulation"
+  }
+}

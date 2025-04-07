@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube",
+  "inventory": {
+    "parent": "voltaic:block/gaspipe/gaspipeuninsulatedplasticside"
+  },
+  "loader": "voltaic:electrodynamicscableloader",
+  "none": {
+    "parent": "voltaic:block/gaspipe/gaspipeuninsulatedplasticcenter"
+  },
+  "render_type": "minecraft:cutout",
+  "wire": {
+    "parent": "voltaic:block/gaspipe/gaspipeuninsulatedplasticside"
+  }
+}

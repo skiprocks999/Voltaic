@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:basicwiring",
+  "criteria": {
+    "HasSilverWire": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:wiresilver"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.betterwiring.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:wiresilver"
+    },
+    "title": {
+      "color": "gray",
+      "translate": "advancement.voltaic.betterwiring.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasSilverWire"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  }
+}

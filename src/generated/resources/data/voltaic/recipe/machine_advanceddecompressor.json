@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "tag": "c:circuits/advanced"
+    },
+    "M": {
+      "item": "voltaic:decompressor"
+    },
+    "O": {
+      "item": "voltaic:motor"
+    },
+    "P": {
+      "tag": "c:plates/steel"
+    },
+    "V": {
+      "item": "voltaic:mechanicalvalve"
+    },
+    "W": {
+      "item": "voltaic:wiresilver"
+    }
+  },
+  "pattern": [
+    "PCP",
+    "VMV",
+    "OWO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:advanceddecompressor"
+  }
+}

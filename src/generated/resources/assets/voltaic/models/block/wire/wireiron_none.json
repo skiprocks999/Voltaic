@@ -1,0 +1,8 @@
+{
+  "parent": "voltaic:parent/wire_none",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "conductor": "voltaic:block/wire/iron",
+    "particle": "#conductor"
+  }
+}

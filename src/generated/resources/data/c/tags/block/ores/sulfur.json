@@ -1,6 +1,6 @@
 {
   "values": [
-    "electrodynamics:oresulfur",
-    "electrodynamics:deepslateoresulfur"
+    "voltaic:oresulfur",
+    "voltaic:deepslateoresulfur"
   ]
 }

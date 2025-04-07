@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "voltaic:pipesteel"
+    },
+    "R": {
+      "tag": "c:dusts/redstone"
+    },
+    "V": {
+      "item": "voltaic:mechanicalvalve"
+    }
+  },
+  "pattern": [
+    "VPR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:fluidvalve"
+  }
+}

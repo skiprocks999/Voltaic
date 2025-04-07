@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaic:block/lathe"
+    },
+    "facing=north": {
+      "model": "voltaic:block/lathe",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaic:block/lathe",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaic:block/lathe",
+      "y": 180
+    }
+  }
+}

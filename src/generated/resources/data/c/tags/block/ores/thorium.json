@@ -1,6 +1,6 @@
 {
   "values": [
-    "electrodynamics:orethorium",
-    "electrodynamics:deepslateorethorium"
+    "voltaic:orethorium",
+    "voltaic:deepslateorethorium"
   ]
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaic:block/quarry"
+    },
+    "facing=north": {
+      "model": "voltaic:block/quarry",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaic:block/quarry",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaic:block/quarry",
+      "y": 180
+    }
+  }
+}

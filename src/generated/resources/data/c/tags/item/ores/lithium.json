@@ -1,6 +1,6 @@
 {
   "values": [
-    "electrodynamics:orelithium",
-    "electrodynamics:deepslateorelithium"
+    "voltaic:orelithium",
+    "voltaic:deepslateorelithium"
   ]
 }

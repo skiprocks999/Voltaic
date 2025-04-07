@@ -1,8 +1,8 @@
 {
   "values": [
-    "electrodynamics:electricity",
-    "electrodynamics:radiation",
-    "electrodynamics:accelerated_bolt_ignorearmor",
-    "electrodynamics:plasma_bolt"
+    "voltaic:electricity",
+    "voltaic:radiation",
+    "voltaic:accelerated_bolt_ignorearmor",
+    "voltaic:plasma_bolt"
   ]
 }

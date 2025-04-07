@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaic:block/tanksteel"
+    },
+    "facing=north": {
+      "model": "voltaic:block/tanksteel",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaic:block/tanksteel",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaic:block/tanksteel",
+      "y": 180
+    }
+  }
+}

@@ -1,11 +1,11 @@
 {
   "values": [
-    "electrodynamics:wireinsulatedironblack",
-    "electrodynamics:wireinsulatedironred",
-    "electrodynamics:wireinsulatedironwhite",
-    "electrodynamics:wireinsulatedirongreen",
-    "electrodynamics:wireinsulatedironblue",
-    "electrodynamics:wireinsulatedironyellow",
-    "electrodynamics:wireinsulatedironbrown"
+    "voltaic:wireinsulatedironblack",
+    "voltaic:wireinsulatedironred",
+    "voltaic:wireinsulatedironwhite",
+    "voltaic:wireinsulatedirongreen",
+    "voltaic:wireinsulatedironblue",
+    "voltaic:wireinsulatedironyellow",
+    "voltaic:wireinsulatedironbrown"
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "parent": "voltaic:root",
+  "criteria": {
+    "HasWoodenPickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:wooden_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.voltaic.ores.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:oretin"
+    },
+    "show_toast": false,
+    "title": {
+      "color": "gray",
+      "translate": "advancement.voltaic.ores.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasWoodenPickaxe"
+    ]
+  ],
+  "rewards": {
+    "experience": 10
+  }
+}

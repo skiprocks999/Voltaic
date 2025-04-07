@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaic:block/mineralcrusherbase"
+    },
+    "facing=north": {
+      "model": "voltaic:block/mineralcrusherbase",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaic:block/mineralcrusherbase",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaic:block/mineralcrusherbase",
+      "y": 180
+    }
+  }
+}

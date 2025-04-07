@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:mineralcrusher",
+  "criteria": {
+    "HasCrusher": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:mineralcrusherdouble"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.doublemineralcrusher.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:mineralcrusherdouble"
+    },
+    "title": {
+      "color": "blue",
+      "translate": "advancement.voltaic.doublemineralcrusher.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasCrusher"
+    ]
+  ],
+  "rewards": {
+    "experience": 70
+  }
+}

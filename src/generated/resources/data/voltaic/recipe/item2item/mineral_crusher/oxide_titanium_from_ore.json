@@ -1,0 +1,28 @@
+{
+  "type": "voltaic:mineral_crusher_recipe",
+  "experience": 0.5,
+  "group": "voltaic",
+  "itembi": [
+    {
+      "chance": 0.3,
+      "item": {
+        "count": 1,
+        "id": "voltaic:impuredustiron"
+      }
+    }
+  ],
+  "iteminputs": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ores/titanium"
+      }
+    }
+  ],
+  "output": {
+    "count": 3,
+    "id": "voltaic:oxidedititanium"
+  },
+  "ticks": 200,
+  "usagepertick": 450.0
+}

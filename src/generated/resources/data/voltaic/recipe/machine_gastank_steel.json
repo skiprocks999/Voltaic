@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "voltaic:compressoraddontank"
+    },
+    "S": {
+      "tag": "c:plates/steel"
+    },
+    "V": {
+      "item": "voltaic:mechanicalvalve"
+    }
+  },
+  "pattern": [
+    " V ",
+    "SPS",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:gastanksteel"
+  }
+}

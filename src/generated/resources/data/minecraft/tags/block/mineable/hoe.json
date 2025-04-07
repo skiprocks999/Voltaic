@@ -1,6 +1,6 @@
 {
   "values": [
-    "electrodynamics:frame",
-    "electrodynamics:framecorner"
+    "voltaic:frame",
+    "voltaic:framecorner"
   ]
 }

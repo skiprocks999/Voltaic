@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaic:block/creativegassource"
+    },
+    "facing=north": {
+      "model": "voltaic:block/creativegassource",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaic:block/creativegassource",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaic:block/creativegassource",
+      "y": 180
+    }
+  }
+}

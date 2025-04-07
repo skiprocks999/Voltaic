@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,lit=false": {
+      "model": "voltaic:block/gasvalve",
+      "y": 90
+    },
+    "facing=east,lit=true": {
+      "model": "voltaic:block/gasvalveon",
+      "y": 90
+    },
+    "facing=north,lit=false": {
+      "model": "voltaic:block/gasvalve"
+    },
+    "facing=north,lit=true": {
+      "model": "voltaic:block/gasvalveon"
+    },
+    "facing=south,lit=false": {
+      "model": "voltaic:block/gasvalve",
+      "y": 180
+    },
+    "facing=south,lit=true": {
+      "model": "voltaic:block/gasvalveon",
+      "y": 180
+    },
+    "facing=west,lit=false": {
+      "model": "voltaic:block/gasvalve",
+      "y": 270
+    },
+    "facing=west,lit=true": {
+      "model": "voltaic:block/gasvalveon",
+      "y": 270
+    }
+  }
+}

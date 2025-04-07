@@ -1,20 +1,20 @@
 {
   "values": [
-    "electrodynamics:orechromium",
-    "electrodynamics:oretitanium",
-    "electrodynamics:orethorium",
-    "electrodynamics:oreuranium",
-    "electrodynamics:deepslateorechromium",
-    "electrodynamics:deepslateoretitanium",
-    "electrodynamics:deepslateorethorium",
-    "electrodynamics:deepslateoreuranium",
-    "electrodynamics:raworeblockchromium",
-    "electrodynamics:raworeblocktitanium",
-    "electrodynamics:raworeblockuranium",
-    "electrodynamics:raworeblockthorium",
-    "electrodynamics:resourceblockchromium",
-    "electrodynamics:resourceblockhslasteel",
-    "electrodynamics:resourceblocktitanium",
-    "electrodynamics:resourceblocktitaniumcarbide"
+    "voltaic:orechromium",
+    "voltaic:oretitanium",
+    "voltaic:orethorium",
+    "voltaic:oreuranium",
+    "voltaic:deepslateorechromium",
+    "voltaic:deepslateoretitanium",
+    "voltaic:deepslateorethorium",
+    "voltaic:deepslateoreuranium",
+    "voltaic:raworeblockchromium",
+    "voltaic:raworeblocktitanium",
+    "voltaic:raworeblockuranium",
+    "voltaic:raworeblockthorium",
+    "voltaic:resourceblockchromium",
+    "voltaic:resourceblockhslasteel",
+    "voltaic:resourceblocktitanium",
+    "voltaic:resourceblocktitaniumcarbide"
   ]
 }

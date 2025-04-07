@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "compressorsidehastoptank=false,facing=east": {
+      "model": "voltaic:block/decompressor",
+      "y": 90
+    },
+    "compressorsidehastoptank=false,facing=north": {
+      "model": "voltaic:block/decompressor"
+    },
+    "compressorsidehastoptank=false,facing=south": {
+      "model": "voltaic:block/decompressor",
+      "y": 180
+    },
+    "compressorsidehastoptank=false,facing=west": {
+      "model": "voltaic:block/decompressor",
+      "y": 270
+    },
+    "compressorsidehastoptank=true,facing=east": {
+      "model": "voltaic:block/decompressortoptank",
+      "y": 90
+    },
+    "compressorsidehastoptank=true,facing=north": {
+      "model": "voltaic:block/decompressortoptank"
+    },
+    "compressorsidehastoptank=true,facing=south": {
+      "model": "voltaic:block/decompressortoptank",
+      "y": 180
+    },
+    "compressorsidehastoptank=true,facing=west": {
+      "model": "voltaic:block/decompressortoptank",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "voltaic:wiresuperconductive"
+    },
+    {
+      "item": "voltaic:insulation"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "voltaic:wireinsulatedsuperconductiveblack"
+  }
+}

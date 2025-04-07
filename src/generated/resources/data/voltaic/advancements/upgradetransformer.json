@@ -1,0 +1,36 @@
+{
+  "parent": "voltaic:basicwiring",
+  "criteria": {
+    "HasTransformer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "voltaic:upgradetransformer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.voltaic.upgradetransformer.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "voltaic:upgradetransformer"
+    },
+    "title": {
+      "color": "light_purple",
+      "translate": "advancement.voltaic.upgradetransformer.title"
+    }
+  },
+  "requirements": [
+    [
+      "HasTransformer"
+    ]
+  ],
+  "rewards": {
+    "experience": 25
+  }
+}
