@@ -1,9 +1,0 @@
-{
-  "parent": "voltaic:parent/insulatedwire_none",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "conductor": "voltaic:block/wire/gold_center",
-    "insulation": "voltaic:block/wire/insulationwool_center",
-    "particle": "#insulation"
-  }
-}

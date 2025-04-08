@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "voltaic:item/wire/wirehighlyinsulatedgold",
-    "layer1": "voltaic:item/wire/wirehighlyinsulatedcoil"
-  }
-}

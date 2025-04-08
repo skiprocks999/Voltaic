@@ -1,7 +1,0 @@
-{
-  "parent": "voltaic:parent/gaspipeuninsulatedside",
-  "textures": {
-    "particle": "#texture",
-    "texture": "voltaic:block/gaspipe/gaspipeuninsulatedcopperside"
-  }
-}

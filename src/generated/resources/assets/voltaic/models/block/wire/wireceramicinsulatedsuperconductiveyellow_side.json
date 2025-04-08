@@ -1,9 +1,0 @@
-{
-  "parent": "voltaic:parent/ceramicinsulatedwire_side",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "insulationbase": "voltaic:block/wire/insulationceramic_base",
-    "insulationcolor": "voltaic:block/wire/insulationceramic",
-    "particle": "#insulationcolor"
-  }
-}

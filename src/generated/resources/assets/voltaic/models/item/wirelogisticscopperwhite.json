@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "voltaic:item/wire/wirelogisticscopper",
-    "layer1": "voltaic:item/wire/wirelogisticscoil",
-    "layer2": "voltaic:item/wire/wirelogisticsredstone"
-  }
-}

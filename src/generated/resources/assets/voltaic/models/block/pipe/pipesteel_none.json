@@ -1,7 +1,0 @@
-{
-  "parent": "voltaic:parent/pipe_none",
-  "textures": {
-    "particle": "#texture",
-    "texture": "voltaic:block/pipe/pipesteel"
-  }
-}

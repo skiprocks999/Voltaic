@@ -1,8 +1,0 @@
-{
-  "parent": "voltaic:parent/insulatedwire_side",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "insulation": "voltaic:block/wire/insulationwool",
-    "particle": "#insulation"
-  }
-}

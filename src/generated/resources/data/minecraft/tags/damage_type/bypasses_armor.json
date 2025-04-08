@@ -1,8 +1,6 @@
 {
   "values": [
-    "voltaic:electricity",
-    "voltaic:radiation",
-    "voltaic:accelerated_bolt_ignorearmor",
-    "voltaic:plasma_bolt"
+    "voltaicapi:electricity",
+    "voltaicapi:radiation"
   ]
 }

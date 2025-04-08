@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "voltaic:item/tools/electricdrillonbase",
-    "layer1": "voltaic:item/tools/electricdrillonhead"
-  }
-}
