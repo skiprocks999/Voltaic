@@ -56,8 +56,6 @@ public class ComponentProcessor implements IComponent {
     private BiConsumer<ComponentProcessor, Integer> process = (component, index) -> {};
     private TriConsumer<ComponentProcessor, List<Integer>, Boolean> failed = (component, failedProcessors, anySuceeded) -> {};
     private final int numProcessors;
-    //private final int processorNumber = 0;
-    //public int totalProcessors = 1;
 
     private List<RecipeHolder<VoltaicRecipe>> cachedRecipes = new ArrayList<>();
     private final VoltaicRecipe[] activeRecipies;
