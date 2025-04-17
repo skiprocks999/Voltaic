@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 
 import com.mojang.serialization.MapCodec;
 
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import voltaic.common.block.voxelshapes.VoxelShapeProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -35,7 +35,7 @@ public class GenericMachineBlock extends GenericEntityBlockWaterloggable {
 
     public GenericMachineBlock(BlockEntitySupplier<BlockEntity> blockEntitySupplier, VoxelShapeProvider provider) {
         super(Blocks.IRON_BLOCK.properties().strength(3.5F).sound(SoundType.METAL).noOcclusion().requiresCorrectToolForDrops());
-        registerDefaultState(stateDefinition.any().setValue(ModularElectricityBlockStates.FACING, Direction.NORTH));
+        registerDefaultState(stateDefinition.any().setValue(VoltaicBlockStates.FACING, Direction.NORTH));
         this.blockEntitySupplier = blockEntitySupplier;
         this.shapeProvider = provider;
     }
@@ -47,9 +47,9 @@ public class GenericMachineBlock extends GenericEntityBlockWaterloggable {
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
         Direction dir = null;
-        if (state.hasProperty(ModularElectricityBlockStates.FACING)) {
+        if (state.hasProperty(VoltaicBlockStates.FACING)) {
 
-            dir = state.getValue(ModularElectricityBlockStates.FACING);
+            dir = state.getValue(VoltaicBlockStates.FACING);
 
         }
         return shapeProvider.getShape(dir);
@@ -75,13 +75,13 @@ public class GenericMachineBlock extends GenericEntityBlockWaterloggable {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return super.getStateForPlacement(context).setValue(ModularElectricityBlockStates.FACING, context.getHorizontalDirection().getOpposite());
+        return super.getStateForPlacement(context).setValue(VoltaicBlockStates.FACING, context.getHorizontalDirection().getOpposite());
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(ModularElectricityBlockStates.FACING);
+        builder.add(VoltaicBlockStates.FACING);
     }
 
     public boolean isIPlayerStorable() {

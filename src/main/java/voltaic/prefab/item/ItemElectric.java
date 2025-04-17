@@ -6,7 +6,7 @@ import java.util.function.Function;
 import voltaic.api.electricity.formatting.ChatFormatter;
 import voltaic.api.electricity.formatting.DisplayUnits;
 import voltaic.api.item.IItemElectric;
-import voltaic.common.item.ItemElectrodynamics;
+import voltaic.common.item.ItemVoltaic;
 import voltaic.prefab.utilities.VoltaicTextUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
@@ -21,7 +21,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 
-public class ItemElectric extends ItemElectrodynamics implements IItemElectric {
+public class ItemElectric extends ItemVoltaic implements IItemElectric {
 
 	private final ElectricItemProperties properties;
 	private final Function<Item, Item> getBatteryItem;

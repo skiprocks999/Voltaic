@@ -3,7 +3,7 @@ package voltaic.datagen.utils.client;
 import javax.annotation.Nullable;
 
 import voltaic.Voltaic;
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import voltaic.datagen.utils.client.model.SlaveNodeModelBuilder;
 import voltaic.datagen.utils.client.model.WireModelBuilder;
 import net.minecraft.core.Direction;
@@ -114,10 +114,10 @@ public abstract class BaseBlockstateProvider extends BlockStateProvider {
 
     public ItemModelBuilder horrRotatedBlock(Block block, ModelFile file, int yRotationOffset, int xRotation, boolean registerItem) {
         getVariantBuilder(block)//
-                .partialState().with(ModularElectricityBlockStates.FACING, Direction.NORTH).modelForState().modelFile(file).rotationY((270 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
-                .partialState().with(ModularElectricityBlockStates.FACING, Direction.EAST).modelForState().modelFile(file).rotationY((0 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
-                .partialState().with(ModularElectricityBlockStates.FACING, Direction.SOUTH).modelForState().modelFile(file).rotationY((90 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
-                .partialState().with(ModularElectricityBlockStates.FACING, Direction.WEST).modelForState().modelFile(file).rotationY((180 + yRotationOffset) % 360).rotationX(xRotation).addModel();
+                .partialState().with(VoltaicBlockStates.FACING, Direction.NORTH).modelForState().modelFile(file).rotationY((270 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
+                .partialState().with(VoltaicBlockStates.FACING, Direction.EAST).modelForState().modelFile(file).rotationY((0 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
+                .partialState().with(VoltaicBlockStates.FACING, Direction.SOUTH).modelForState().modelFile(file).rotationY((90 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
+                .partialState().with(VoltaicBlockStates.FACING, Direction.WEST).modelForState().modelFile(file).rotationY((180 + yRotationOffset) % 360).rotationX(xRotation).addModel();
         if (registerItem) {
             return blockItem(block, file);
         }
@@ -138,14 +138,14 @@ public abstract class BaseBlockstateProvider extends BlockStateProvider {
 
     public ItemModelBuilder horrRotatedLitBlock(Block block, ModelFile off, ModelFile on, int yRotationOffset, int xRotation, boolean registerItem) {
         getVariantBuilder(block)//
-                .partialState().with(ModularElectricityBlockStates.FACING, Direction.NORTH).with(ModularElectricityBlockStates.LIT, false).modelForState().modelFile(off).rotationY((270 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
-                .partialState().with(ModularElectricityBlockStates.FACING, Direction.EAST).with(ModularElectricityBlockStates.LIT, false).modelForState().modelFile(off).rotationY((0 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
-                .partialState().with(ModularElectricityBlockStates.FACING, Direction.SOUTH).with(ModularElectricityBlockStates.LIT, false).modelForState().modelFile(off).rotationY((90 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
-                .partialState().with(ModularElectricityBlockStates.FACING, Direction.WEST).with(ModularElectricityBlockStates.LIT, false).modelForState().modelFile(off).rotationY((180 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
-                .partialState().with(ModularElectricityBlockStates.FACING, Direction.NORTH).with(ModularElectricityBlockStates.LIT, true).modelForState().modelFile(on).rotationY((270 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
-                .partialState().with(ModularElectricityBlockStates.FACING, Direction.EAST).with(ModularElectricityBlockStates.LIT, true).modelForState().modelFile(on).rotationY((0 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
-                .partialState().with(ModularElectricityBlockStates.FACING, Direction.SOUTH).with(ModularElectricityBlockStates.LIT, true).modelForState().modelFile(on).rotationY((90 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
-                .partialState().with(ModularElectricityBlockStates.FACING, Direction.WEST).with(ModularElectricityBlockStates.LIT, true).modelForState().modelFile(on).rotationY((180 + yRotationOffset) % 360).rotationX(xRotation).addModel();
+                .partialState().with(VoltaicBlockStates.FACING, Direction.NORTH).with(VoltaicBlockStates.LIT, false).modelForState().modelFile(off).rotationY((270 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
+                .partialState().with(VoltaicBlockStates.FACING, Direction.EAST).with(VoltaicBlockStates.LIT, false).modelForState().modelFile(off).rotationY((0 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
+                .partialState().with(VoltaicBlockStates.FACING, Direction.SOUTH).with(VoltaicBlockStates.LIT, false).modelForState().modelFile(off).rotationY((90 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
+                .partialState().with(VoltaicBlockStates.FACING, Direction.WEST).with(VoltaicBlockStates.LIT, false).modelForState().modelFile(off).rotationY((180 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
+                .partialState().with(VoltaicBlockStates.FACING, Direction.NORTH).with(VoltaicBlockStates.LIT, true).modelForState().modelFile(on).rotationY((270 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
+                .partialState().with(VoltaicBlockStates.FACING, Direction.EAST).with(VoltaicBlockStates.LIT, true).modelForState().modelFile(on).rotationY((0 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
+                .partialState().with(VoltaicBlockStates.FACING, Direction.SOUTH).with(VoltaicBlockStates.LIT, true).modelForState().modelFile(on).rotationY((90 + yRotationOffset) % 360).rotationX(xRotation).addModel()//
+                .partialState().with(VoltaicBlockStates.FACING, Direction.WEST).with(VoltaicBlockStates.LIT, true).modelForState().modelFile(on).rotationY((180 + yRotationOffset) % 360).rotationX(xRotation).addModel();
         if (registerItem) {
             return blockItem(block, off);
         }
@@ -158,7 +158,7 @@ public abstract class BaseBlockstateProvider extends BlockStateProvider {
     }
 
     public ItemModelBuilder redstoneToggleBlock(Block block, ModelFile off, ModelFile on, boolean registerItem) {
-        getVariantBuilder(block).partialState().with(ModularElectricityBlockStates.LIT, false).modelForState().modelFile(off).addModel().partialState().with(ModularElectricityBlockStates.LIT, true).modelForState().modelFile(on).addModel();
+        getVariantBuilder(block).partialState().with(VoltaicBlockStates.LIT, false).modelForState().modelFile(off).addModel().partialState().with(VoltaicBlockStates.LIT, true).modelForState().modelFile(on).addModel();
         if (registerItem) {
             return blockItem(block, off);
         }

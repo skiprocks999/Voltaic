@@ -1,6 +1,6 @@
 package voltaic.prefab.utilities;
 
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import voltaic.prefab.tile.GenericTile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -30,14 +30,14 @@ public class BlockEntityUtils {
 	public static void updateLit(GenericTile tile, Boolean value) {
 		Level world = tile.getLevel();
 		BlockPos pos = tile.getBlockPos();
-		if (tile.getBlockState().hasProperty(ModularElectricityBlockStates.LIT)) {
-			world.setBlockAndUpdate(pos, world.getBlockState(pos).setValue(ModularElectricityBlockStates.LIT, value));
+		if (tile.getBlockState().hasProperty(VoltaicBlockStates.LIT)) {
+			world.setBlockAndUpdate(pos, world.getBlockState(pos).setValue(VoltaicBlockStates.LIT, value));
 		}
 	}
 
 	public static boolean isLit(GenericTile tile) {
-		if (tile.getBlockState().hasProperty(ModularElectricityBlockStates.LIT)) {
-			return tile.getBlockState().getValue(ModularElectricityBlockStates.LIT);
+		if (tile.getBlockState().hasProperty(VoltaicBlockStates.LIT)) {
+			return tile.getBlockState().getValue(VoltaicBlockStates.LIT);
 		}
 		return false;
 	}

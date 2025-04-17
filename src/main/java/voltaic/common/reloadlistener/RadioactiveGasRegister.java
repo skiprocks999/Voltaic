@@ -8,7 +8,7 @@ import voltaic.Voltaic;
 import voltaic.api.gas.Gas;
 import voltaic.api.radiation.util.RadioactiveObject;
 import voltaic.common.packet.types.client.PacketSetClientRadioactiveGases;
-import voltaic.common.tags.ModularElectricityTags;
+import voltaic.common.tags.VoltaicTags;
 import voltaic.registers.VoltaicGases;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -95,7 +95,7 @@ public class RadioactiveGasRegister extends SimplePreparableReloadListener<JsonO
 
                 key = key.substring(1);
 
-                tags.put(ModularElectricityTags.Gases.create(ResourceLocation.parse(key)), value);
+                tags.put(VoltaicTags.Gases.create(ResourceLocation.parse(key)), value);
 
             } else {
 

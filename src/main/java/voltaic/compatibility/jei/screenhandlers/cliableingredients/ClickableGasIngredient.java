@@ -1,7 +1,7 @@
 package voltaic.compatibility.jei.screenhandlers.cliableingredients;
 
 import voltaic.api.gas.GasStack;
-import voltaic.compatibility.jei.utils.ingredients.ModularElectricityJeiTypes;
+import voltaic.compatibility.jei.utils.ingredients.VoltaicJeiTypes;
 import mezz.jei.api.ingredients.IIngredientType;
 import mezz.jei.api.ingredients.ITypedIngredient;
 import net.minecraft.client.renderer.Rect2i;
@@ -24,7 +24,7 @@ public class ClickableGasIngredient extends AbstractClickableIngredient<GasStack
 
         @Override
         public IIngredientType<GasStack> getType() {
-            return ModularElectricityJeiTypes.GAS_STACK;
+            return VoltaicJeiTypes.GAS_STACK;
         }
 
         @Override

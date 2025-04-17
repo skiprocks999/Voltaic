@@ -13,7 +13,7 @@ import voltaic.client.particle.lavawithphysics.ParticleLavaWithPhysics;
 import voltaic.client.particle.plasmaball.ParticlePlasmaBall;
 import voltaic.client.guidebook.ReloadListenerResetGuidebook;
 
-import voltaic.client.texture.atlas.AtlasHolderElectrodynamicsCustom;
+import voltaic.client.texture.atlas.AtlasHolderVoltaicCustom;
 import voltaic.registers.VoltaicMenuTypes;
 import voltaic.registers.VoltaicParticles;
 import net.minecraft.client.Minecraft;
@@ -89,7 +89,7 @@ public class VoltaicClientRegister {
 
     @SubscribeEvent
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event) {
-        event.registerReloadListener(AtlasHolderElectrodynamicsCustom.INSTANCE = new AtlasHolderElectrodynamicsCustom(Minecraft.getInstance().getTextureManager()));
+        event.registerReloadListener(AtlasHolderVoltaicCustom.INSTANCE = new AtlasHolderVoltaicCustom(Minecraft.getInstance().getTextureManager()));
         event.registerReloadListener(new ReloadListenerResetGuidebook());
     }
 

@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.jetbrains.annotations.Nullable;
 
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import voltaic.prefab.tile.GenericTile;
 import voltaic.prefab.tile.IWrenchable;
 import voltaic.prefab.tile.components.IComponentType;
@@ -64,7 +64,7 @@ public abstract class GenericEntityBlock extends BaseEntityBlock implements IWre
 
 	@Override
 	public void onRotate(ItemStack stack, BlockPos pos, Player player) {
-		if (player.level().getBlockState(pos).hasProperty(ModularElectricityBlockStates.FACING)) {
+		if (player.level().getBlockState(pos).hasProperty(VoltaicBlockStates.FACING)) {
 			BlockState state = rotate(player.level().getBlockState(pos), Rotation.CLOCKWISE_90);
 			player.level().setBlockAndUpdate(pos, state);
 		}
@@ -72,16 +72,16 @@ public abstract class GenericEntityBlock extends BaseEntityBlock implements IWre
 
 	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
-		if (state.hasProperty(ModularElectricityBlockStates.FACING)) {
-			return state.setValue(ModularElectricityBlockStates.FACING, rot.rotate(state.getValue(ModularElectricityBlockStates.FACING)));
+		if (state.hasProperty(VoltaicBlockStates.FACING)) {
+			return state.setValue(VoltaicBlockStates.FACING, rot.rotate(state.getValue(VoltaicBlockStates.FACING)));
 		}
 		return super.rotate(state, rot);
 	}
 
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
-		if (state.hasProperty(ModularElectricityBlockStates.FACING)) {
-			return state.rotate(mirrorIn.getRotation(state.getValue(ModularElectricityBlockStates.FACING)));
+		if (state.hasProperty(VoltaicBlockStates.FACING)) {
+			return state.rotate(mirrorIn.getRotation(state.getValue(VoltaicBlockStates.FACING)));
 		}
 		return super.mirror(state, mirrorIn);
 	}

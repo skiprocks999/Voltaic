@@ -16,7 +16,7 @@ import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
-public class ItemIodineTablet extends ItemElectrodynamics {
+public class ItemIodineTablet extends ItemVoltaic {
 
     public static final int TIME_MINUTES = 5;
     private static final int TIME = TIME_MINUTES * 60 * 20;
