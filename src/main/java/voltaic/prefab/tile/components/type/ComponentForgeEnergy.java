@@ -10,7 +10,6 @@ import voltaic.prefab.tile.components.CapabilityInputType;
 import voltaic.prefab.tile.components.IComponent;
 import voltaic.prefab.tile.components.IComponentType;
 import voltaic.prefab.utilities.object.TransferPack;
-import voltaic.registers.VoltaicCapabilities;
 
 public class ComponentForgeEnergy implements IComponent {
 
@@ -72,12 +71,12 @@ public class ComponentForgeEnergy implements IComponent {
 
         @Override
         public int receiveEnergy(int toReceive, boolean simulate) {
-            return (int) Math.ceil(electro.receivePower(TransferPack.joulesVoltage(toReceive, VoltaicCapabilities.DEFAULT_VOLTAGE), simulate).getJoules());
+            return (int) Math.ceil(electro.receivePower(TransferPack.joulesVoltage(toReceive, electro.getVoltage()), simulate).getJoules());
         }
 
         @Override
         public int extractEnergy(int toExtract, boolean simulate) {
-            return (int) electro.extractPower(TransferPack.joulesVoltage(toExtract, VoltaicCapabilities.DEFAULT_VOLTAGE), simulate).getJoules();
+            return (int) electro.extractPower(TransferPack.joulesVoltage(toExtract, electro.getVoltage()), simulate).getJoules();
         }
 
         @Override
