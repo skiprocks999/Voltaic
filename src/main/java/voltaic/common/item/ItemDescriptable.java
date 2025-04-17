@@ -8,7 +8,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 
-public class ItemDescriptable extends ItemElectrodynamics {
+public class ItemDescriptable extends ItemVoltaic {
 
 	private Component[] tooltips;
 

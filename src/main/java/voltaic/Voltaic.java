@@ -12,10 +12,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import voltaic.client.VoltaicClientRegister;
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import voltaic.common.packet.types.client.PacketResetGuidebookPages;
-import voltaic.common.settings.ModularElectricityConstants;
-import voltaic.common.tags.ModularElectricityTags;
+import voltaic.common.settings.VoltaicConstants;
+import voltaic.common.tags.VoltaicTags;
 import voltaic.prefab.configuration.ConfigurationHandler;
 import voltaic.registers.UnifiedVoltaicRegister;
 import net.minecraft.resources.ResourceLocation;
@@ -54,9 +54,9 @@ public class Voltaic {
 
     public Voltaic(IEventBus bus) {
         ELECTRODYNAMICS_LOADED = ModList.get().isLoaded(ELECTRODYNAMICS_MOD_ID);
-        ConfigurationHandler.registerConfig(ModularElectricityConstants.class);
+        ConfigurationHandler.registerConfig(VoltaicConstants.class);
         // MUST GO BEFORE BLOCKS!!!!
-        ModularElectricityBlockStates.init();
+        VoltaicBlockStates.init();
         UnifiedVoltaicRegister.register(bus);
 
     }
@@ -65,7 +65,7 @@ public class Voltaic {
     public static void onCommonSetup(FMLCommonSetupEvent event) {
 
         NeoForge.EVENT_BUS.addListener(getGuidebookListener());
-        ModularElectricityTags.init();
+        VoltaicTags.init();
         RadioactiveItemRegister.INSTANCE = new RadioactiveItemRegister().subscribeAsSyncable();
         RadioactiveFluidRegister.INSTANCE = new RadioactiveFluidRegister().subscribeAsSyncable();
         RadioactiveGasRegister.INSTANCE = new RadioactiveGasRegister().subscribeAsSyncable();

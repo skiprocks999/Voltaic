@@ -4,7 +4,7 @@ import voltaic.Voltaic;
 import voltaic.api.radiation.util.IHazmatSuit;
 import voltaic.api.radiation.util.IRadiationRecipient;
 import voltaic.api.radiation.util.RadioactiveObject;
-import voltaic.common.settings.ModularElectricityConstants;
+import voltaic.common.settings.VoltaicConstants;
 import voltaic.registers.VoltaicAttachmentTypes;
 import voltaic.registers.VoltaicEffects;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -31,12 +31,12 @@ public class CapabilityRadiationRecipient implements IRadiationRecipient {
         }
 
         if(entity.hasEffect(VoltaicEffects.RADIATION_RESISTANCE)) {
-            if(rads <= ModularElectricityConstants.IODINE_RESISTANCE_THRESHHOLD) {
+            if(rads <= VoltaicConstants.IODINE_RESISTANCE_THRESHHOLD) {
                 entity.setData(VoltaicAttachmentTypes.RECIEVED_RADIATIONAMOUNT, entity.getData(VoltaicAttachmentTypes.RECIEVED_RADIATIONAMOUNT) + rads);
                 entity.setData(VoltaicAttachmentTypes.RECIEVED_RADIATIONSTRENGTH, entity.getData(VoltaicAttachmentTypes.RECIEVED_RADIATIONSTRENGTH) + strength);
                 return;
             } else {
-                rads = rads * ModularElectricityConstants.IODINE_RAD_REDUCTION;
+                rads = rads * VoltaicConstants.IODINE_RAD_REDUCTION;
             }
         }
 

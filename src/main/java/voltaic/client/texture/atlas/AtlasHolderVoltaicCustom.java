@@ -6,9 +6,9 @@ import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.resources.TextureAtlasHolder;
 import net.minecraft.resources.ResourceLocation;
 
-public class AtlasHolderElectrodynamicsCustom extends TextureAtlasHolder {
+public class AtlasHolderVoltaicCustom extends TextureAtlasHolder {
 
-	public static AtlasHolderElectrodynamicsCustom INSTANCE;
+	public static AtlasHolderVoltaicCustom INSTANCE;
 
 	// Custom Textures
 //	public static final ResourceLocation TEXTURE_QUARRYARM = create("quarryarm");
@@ -16,8 +16,8 @@ public class AtlasHolderElectrodynamicsCustom extends TextureAtlasHolder {
 //	public static final ResourceLocation TEXTURE_MERCURY = create("mercury");
 //	public static final ResourceLocation TEXTURE_GAS = create("gastexture");
 
-	public AtlasHolderElectrodynamicsCustom(TextureManager textureManager) {
-		super(textureManager, Voltaic.rl("textures/" + Voltaic.ID + "/" + ElectrodynamicsTextureAtlases.ELECTRODYNAMICS_CUSTOM_NAME + ".png"), ElectrodynamicsTextureAtlases.ELECTRODYNAMICS_CUSTOM);
+	public AtlasHolderVoltaicCustom(TextureManager textureManager) {
+		super(textureManager, Voltaic.rl("textures/" + Voltaic.ID + "/" + VoltaicTextureAtlases.ELECTRODYNAMICS_CUSTOM_NAME + ".png"), VoltaicTextureAtlases.ELECTRODYNAMICS_CUSTOM);
 	}
 
 	@Override

@@ -5,7 +5,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 
-public class ModularElectricityBlockStates {
+public class VoltaicBlockStates {
 
     public static void init() {
     }

@@ -13,7 +13,7 @@ import net.minecraft.world.level.material.PushReaction;
  * @author skip999
  *
  */
-public class ModularElectricityMaterials {
+public class VoltaicMaterials {
 
     public static Properties air() {
         return Properties.of().mapColor(MapColor.NONE).noCollission().forceSolidOff().replaceable().isRedstoneConductor((state, getter, pos) -> false);

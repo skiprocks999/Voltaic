@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import voltaic.Voltaic;
 import voltaic.api.gas.Gas;
 import voltaic.api.gas.GasStack;
-import voltaic.compatibility.jei.utils.ingredients.ModularElectricityJeiTypes;
+import voltaic.compatibility.jei.utils.ingredients.VoltaicJeiTypes;
 import voltaic.compatibility.jei.utils.ingredients.IngredientHelperGasStack;
 import voltaic.compatibility.jei.utils.ingredients.IngredientRendererGasStack;
 import voltaic.registers.VoltaicGases;
@@ -20,7 +20,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 @JeiPlugin
-public class VoltaicAPIJEIPlugin implements IModPlugin {
+public class VoltaicJEIPlugin implements IModPlugin {
 
     public static final ResourceLocation ID = Voltaic.rl( "jei");
 
@@ -31,7 +31,7 @@ public class VoltaicAPIJEIPlugin implements IModPlugin {
 
     @Override
     public void registerIngredients(IModIngredientRegistration registration) {
-        registration.register(ModularElectricityJeiTypes.GAS_STACK, new ArrayList<>(), new IngredientHelperGasStack(), IngredientRendererGasStack.LIST_RENDERER, GasStack.CODEC);
+        registration.register(VoltaicJeiTypes.GAS_STACK, new ArrayList<>(), new IngredientHelperGasStack(), IngredientRendererGasStack.LIST_RENDERER, GasStack.CODEC);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class VoltaicAPIJEIPlugin implements IModPlugin {
 
             gases.add(new GasStack(gas.get(), 1000, Gas.ROOM_TEMPERATURE, Gas.PRESSURE_AT_SEA_LEVEL));
         }
-        registration.addExtraIngredients(ModularElectricityJeiTypes.GAS_STACK, gases);
+        registration.addExtraIngredients(VoltaicJeiTypes.GAS_STACK, gases);
     }
 
 }

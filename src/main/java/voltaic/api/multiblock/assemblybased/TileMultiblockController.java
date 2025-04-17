@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 import voltaic.api.electricity.ICapabilityElectrodynamic;
 import voltaic.api.gas.IGasHandler;
 import voltaic.api.gas.GasTank;
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import voltaic.prefab.properties.variant.ListProperty;
 import voltaic.prefab.properties.variant.SingleProperty;
 import voltaic.prefab.properties.types.PropertyTypes;
@@ -152,7 +152,7 @@ public abstract class TileMultiblockController extends TileReplaceable {
 
 			slavePositions.addValue(nodePos, index);
 
-			level.setBlockAndUpdate(nodePos, node.placeState().setValue(ModularElectricityBlockStates.FACING, getFacing()));
+			level.setBlockAndUpdate(nodePos, node.placeState().setValue(VoltaicBlockStates.FACING, getFacing()));
 
 			slave = (TileMultiblockSlave) level.getBlockEntity(nodePos);
 

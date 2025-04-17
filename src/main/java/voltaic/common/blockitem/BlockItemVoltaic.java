@@ -9,11 +9,11 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 
-public class BlockItemModularElectricity extends BlockItem implements CreativeTabSupplier {
+public class BlockItemVoltaic extends BlockItem implements CreativeTabSupplier {
 
 	private final Holder<CreativeModeTab> creativeTab;
 
-	public BlockItemModularElectricity(Block block, Properties properties, Holder<CreativeModeTab> creativeTab) {
+	public BlockItemVoltaic(Block block, Properties properties, Holder<CreativeModeTab> creativeTab) {
 		super(block, properties);
 		this.creativeTab = creativeTab;
 	}
