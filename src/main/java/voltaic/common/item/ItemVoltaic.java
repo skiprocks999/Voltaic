@@ -8,11 +8,11 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-public class ItemElectrodynamics extends Item implements CreativeTabSupplier {
+public class ItemVoltaic extends Item implements CreativeTabSupplier {
 
 	private final Holder<CreativeModeTab> creativeTab;
 
-	public ItemElectrodynamics(Properties properties, Holder<CreativeModeTab> creativeTab) {
+	public ItemVoltaic(Properties properties, Holder<CreativeModeTab> creativeTab) {
 		super(properties);
 		this.creativeTab = creativeTab;
 	}

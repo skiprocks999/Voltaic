@@ -5,7 +5,7 @@ import com.mojang.serialization.MapCodec;
 import voltaic.api.multiblock.subnodebased.parent.IMultiblockParentBlock;
 import voltaic.api.multiblock.subnodebased.parent.IMultiblockParentTile;
 import voltaic.api.tile.IMachine;
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import voltaic.prefab.block.GenericMachineBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -32,7 +32,7 @@ public class BlockMachine extends GenericMachineBlock implements IMultiblockPare
         super(machine.getBlockEntitySupplier(), machine.getVoxelShapeProvider());
         this.machine = machine;
         if (machine.usesLit()) {
-            registerDefaultState(stateDefinition.any().setValue(ModularElectricityBlockStates.LIT, false));
+            registerDefaultState(stateDefinition.any().setValue(VoltaicBlockStates.LIT, false));
         }
 
     }
@@ -49,7 +49,7 @@ public class BlockMachine extends GenericMachineBlock implements IMultiblockPare
     public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
 
         if(machine.isMultiblock()) {
-            return isValidMultiblockPlacement(state, worldIn, pos, machine.getSubnodes().getSubnodes(state.hasProperty(ModularElectricityBlockStates.FACING) ? state.getValue(ModularElectricityBlockStates.FACING) : Direction.NORTH));
+            return isValidMultiblockPlacement(state, worldIn, pos, machine.getSubnodes().getSubnodes(state.hasProperty(VoltaicBlockStates.FACING) ? state.getValue(VoltaicBlockStates.FACING) : Direction.NORTH));
         }
         return super.canSurvive(state, worldIn, pos);
 
@@ -63,7 +63,7 @@ public class BlockMachine extends GenericMachineBlock implements IMultiblockPare
     @Override
     public int getLightEmission(BlockState state, BlockGetter world, BlockPos pos) {
 
-        if (machine.getLitBrightness() > 0 && state.hasProperty(ModularElectricityBlockStates.LIT) && state.getValue(ModularElectricityBlockStates.LIT)) {
+        if (machine.getLitBrightness() > 0 && state.hasProperty(VoltaicBlockStates.LIT) && state.getValue(VoltaicBlockStates.LIT)) {
             return machine.getLitBrightness();
         }
 
@@ -82,7 +82,7 @@ public class BlockMachine extends GenericMachineBlock implements IMultiblockPare
     @Override
     public void onRemove(BlockState state, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
         BlockEntity tile = worldIn.getBlockEntity(pos);
-        if (!(state.getBlock() == newState.getBlock() && state.getValue(ModularElectricityBlockStates.FACING) != newState.getValue(ModularElectricityBlockStates.FACING))) {
+        if (!(state.getBlock() == newState.getBlock() && state.getValue(VoltaicBlockStates.FACING) != newState.getValue(VoltaicBlockStates.FACING))) {
 
             if (tile instanceof IMultiblockParentTile multi) {
                 multi.onNodeReplaced(worldIn, pos, true);
@@ -120,13 +120,13 @@ public class BlockMachine extends GenericMachineBlock implements IMultiblockPare
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return super.getStateForPlacement(context).setValue(ModularElectricityBlockStates.LIT, false);
+        return super.getStateForPlacement(context).setValue(VoltaicBlockStates.LIT, false);
     }
 
     @Override
     protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(ModularElectricityBlockStates.LIT);
+        builder.add(VoltaicBlockStates.LIT);
     }
 
     @Override

@@ -3,7 +3,7 @@ package voltaic.client.texture.atlas;
 import voltaic.Voltaic;
 import net.minecraft.resources.ResourceLocation;
 
-public class ElectrodynamicsTextureAtlases {
+public class VoltaicTextureAtlases {
 
 	public static final String ELECTRODYNAMICS_CUSTOM_NAME = "electrodynamics_custom";
 

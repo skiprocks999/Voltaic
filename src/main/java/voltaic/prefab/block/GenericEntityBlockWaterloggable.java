@@ -2,7 +2,7 @@ package voltaic.prefab.block;
 
 import javax.annotation.Nullable;
 
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.FluidTags;
@@ -19,25 +19,25 @@ public abstract class GenericEntityBlockWaterloggable extends GenericEntityBlock
 
 	protected GenericEntityBlockWaterloggable(Properties properties) {
 		super(properties);
-		registerDefaultState(stateDefinition.any().setValue(ModularElectricityBlockStates.WATERLOGGED, false));
+		registerDefaultState(stateDefinition.any().setValue(VoltaicBlockStates.WATERLOGGED, false));
 	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(ModularElectricityBlockStates.WATERLOGGED);
+		builder.add(VoltaicBlockStates.WATERLOGGED);
 	}
 
 	@Nullable
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
-		return super.getStateForPlacement(context).setValue(ModularElectricityBlockStates.WATERLOGGED, (fluidstate.getType().is(FluidTags.WATER) && fluidstate.isSource()));
+		return super.getStateForPlacement(context).setValue(VoltaicBlockStates.WATERLOGGED, (fluidstate.getType().is(FluidTags.WATER) && fluidstate.isSource()));
 	}
 
 	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
-		if (stateIn.getValue(ModularElectricityBlockStates.WATERLOGGED)) {
+		if (stateIn.getValue(VoltaicBlockStates.WATERLOGGED)) {
 			worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
 		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
@@ -45,7 +45,7 @@ public abstract class GenericEntityBlockWaterloggable extends GenericEntityBlock
 
 	@Override
 	public FluidState getFluidState(BlockState state) {
-		return state.getValue(ModularElectricityBlockStates.WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+		return state.getValue(VoltaicBlockStates.WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
 
 }

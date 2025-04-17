@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 import voltaic.api.fluid.PropertyFluidTank;
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import voltaic.common.recipe.VoltaicRecipe;
 import voltaic.common.recipe.recipeutils.AbstractMaterialRecipe;
 import voltaic.common.recipe.recipeutils.FluidIngredient;
@@ -79,7 +79,7 @@ public class ComponentFluidHandlerMulti implements IComponentFluidHandler {
     public ComponentFluidHandlerMulti(GenericTile holder) {
         this.holder = holder;
 
-        if (!holder.getBlockState().hasProperty(ModularElectricityBlockStates.FACING)) {
+        if (!holder.getBlockState().hasProperty(VoltaicBlockStates.FACING)) {
             throw new UnsupportedOperationException("The tile " + holder + " must have the FACING direction property!");
         }
 
@@ -240,8 +240,8 @@ public class ComponentFluidHandlerMulti implements IComponentFluidHandler {
 
     @Override
     public void refreshIfUpdate(BlockState oldState, BlockState newState) {
-        if (isSided && oldState.hasProperty(ModularElectricityBlockStates.FACING) && newState.hasProperty(ModularElectricityBlockStates.FACING) && oldState.getValue(ModularElectricityBlockStates.FACING) != newState.getValue(ModularElectricityBlockStates.FACING)) {
-            defineOptionals(newState.getValue(ModularElectricityBlockStates.FACING));
+        if (isSided && oldState.hasProperty(VoltaicBlockStates.FACING) && newState.hasProperty(VoltaicBlockStates.FACING) && oldState.getValue(VoltaicBlockStates.FACING) != newState.getValue(VoltaicBlockStates.FACING)) {
+            defineOptionals(newState.getValue(VoltaicBlockStates.FACING));
         }
     }
 

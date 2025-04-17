@@ -12,11 +12,11 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class ItemModularElectricityArmor extends ArmorItem implements CreativeTabSupplier {
+public class ItemVoltaicArmor extends ArmorItem implements CreativeTabSupplier {
 
 	private final Holder<CreativeModeTab> creativeTab;
 
-	public ItemModularElectricityArmor(Holder<ArmorMaterial> material, Type type, Properties properties, Holder<CreativeModeTab> creativeTab) {
+	public ItemVoltaicArmor(Holder<ArmorMaterial> material, Type type, Properties properties, Holder<CreativeModeTab> creativeTab) {
 		super(material, type, properties);
 		this.creativeTab = creativeTab;
 	}

@@ -3,7 +3,7 @@ package voltaic.common.block.connect;
 import java.util.ArrayList;
 import java.util.List;
 
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import voltaic.prefab.block.GenericEntityBlockWaterloggable;
 import voltaic.prefab.tile.types.GenericConnectTile;
 import net.minecraft.core.BlockPos;
@@ -40,7 +40,7 @@ public abstract class AbstractConnectBlock extends GenericEntityBlockWaterloggab
 	public AbstractConnectBlock(Properties properties, double radius) {
 		super(properties);
 		generateBoundingBoxes(radius);
-		stateDefinition.any().setValue(ModularElectricityBlockStates.HAS_SCAFFOLDING, false);
+		stateDefinition.any().setValue(VoltaicBlockStates.HAS_SCAFFOLDING, false);
 	}
 
 	public void generateBoundingBoxes(double radius) {
@@ -68,7 +68,7 @@ public abstract class AbstractConnectBlock extends GenericEntityBlockWaterloggab
 
 		VoxelShape camoShape = Shapes.empty();
 
-		if (state.getValue(ModularElectricityBlockStates.HAS_SCAFFOLDING) && worldIn.getBlockEntity(pos) instanceof GenericConnectTile connect) {
+		if (state.getValue(VoltaicBlockStates.HAS_SCAFFOLDING) && worldIn.getBlockEntity(pos) instanceof GenericConnectTile connect) {
 
 			if (connect.isCamoAir()) {
 				camoShape = connect.getScaffoldBlock().getShape(worldIn, pos, context);
@@ -125,7 +125,7 @@ public abstract class AbstractConnectBlock extends GenericEntityBlockWaterloggab
 	@Override
 	public void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(ModularElectricityBlockStates.HAS_SCAFFOLDING);
+		builder.add(VoltaicBlockStates.HAS_SCAFFOLDING);
 	}
 
 	@Override
@@ -142,10 +142,10 @@ public abstract class AbstractConnectBlock extends GenericEntityBlockWaterloggab
 		Level world = context.getPlayer().level();
 		boolean set = false;
 		if (world.getBlockState(context.getClickedPos()).getBlock() instanceof BlockScaffold) {
-			superState = superState.setValue(ModularElectricityBlockStates.HAS_SCAFFOLDING, true);
+			superState = superState.setValue(VoltaicBlockStates.HAS_SCAFFOLDING, true);
 			set = true;
 		} else {
-			superState = superState.setValue(ModularElectricityBlockStates.HAS_SCAFFOLDING, false);
+			superState = superState.setValue(VoltaicBlockStates.HAS_SCAFFOLDING, false);
 		}
 		if (!world.isClientSide() && set) {
 			world.setBlockAndUpdate(context.getClickedPos(), Blocks.AIR.defaultBlockState());
@@ -175,13 +175,13 @@ public abstract class AbstractConnectBlock extends GenericEntityBlockWaterloggab
 			BlockPlaceContext newCtx = new BlockPlaceContext(player, hand, stack, hitResult);
 
 			if (blockitem.getBlock() instanceof BlockScaffold scaffold) {
-				if (!state.getValue(ModularElectricityBlockStates.HAS_SCAFFOLDING)) {
+				if (!state.getValue(VoltaicBlockStates.HAS_SCAFFOLDING)) {
 					if (!level.isClientSide) {
 						if (!player.isCreative()) {
 							stack.shrink(1);
 							player.setItemInHand(hand, stack);
 						}
-						state = state.setValue(ModularElectricityBlockStates.HAS_SCAFFOLDING, true);
+						state = state.setValue(VoltaicBlockStates.HAS_SCAFFOLDING, true);
 						level.setBlockAndUpdate(pos, state);
 						connect.setScaffoldBlock(scaffold.getStateForPlacement(newCtx));
 						level.playSound(null, pos, blockitem.getBlock().defaultBlockState().getSoundType().getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
@@ -189,7 +189,7 @@ public abstract class AbstractConnectBlock extends GenericEntityBlockWaterloggab
 					return ItemInteractionResult.CONSUME;
 				}
 
-			} else if (!(blockitem.getBlock() instanceof AbstractConnectBlock) && state.getValue(ModularElectricityBlockStates.HAS_SCAFFOLDING)) {
+			} else if (!(blockitem.getBlock() instanceof AbstractConnectBlock) && state.getValue(VoltaicBlockStates.HAS_SCAFFOLDING)) {
 				if (connect.isCamoAir()) {
 					if (!level.isClientSide) {
 						connect.setCamoBlock(blockitem.getBlock().getStateForPlacement(newCtx));
@@ -226,7 +226,7 @@ public abstract class AbstractConnectBlock extends GenericEntityBlockWaterloggab
 	@Override
 	public List<ItemStack> getDrops(BlockState state, net.minecraft.world.level.storage.loot.LootParams.Builder builder) {
 		ArrayList<ItemStack> drops = new ArrayList<>(super.getDrops(state, builder));
-		if (state.getValue(ModularElectricityBlockStates.HAS_SCAFFOLDING) && builder.getOptionalParameter(LootContextParams.BLOCK_ENTITY) instanceof GenericConnectTile connect) {
+		if (state.getValue(VoltaicBlockStates.HAS_SCAFFOLDING) && builder.getOptionalParameter(LootContextParams.BLOCK_ENTITY) instanceof GenericConnectTile connect) {
 			drops.add(new ItemStack(connect.getScaffoldBlock().getBlock()));
 			if (!connect.isCamoAir()) {
 				drops.add(new ItemStack(connect.getCamoBlock().getBlock()));
@@ -237,7 +237,7 @@ public abstract class AbstractConnectBlock extends GenericEntityBlockWaterloggab
 
 	@Override
 	public boolean propagatesSkylightDown(BlockState state, BlockGetter level, BlockPos pos) {
-		if (!state.getValue(ModularElectricityBlockStates.HAS_SCAFFOLDING)) {
+		if (!state.getValue(VoltaicBlockStates.HAS_SCAFFOLDING)) {
 			return true;
 		}
 
@@ -253,7 +253,7 @@ public abstract class AbstractConnectBlock extends GenericEntityBlockWaterloggab
 
 	@Override
 	public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
-		if (!state.getValue(ModularElectricityBlockStates.HAS_SCAFFOLDING)) {
+		if (!state.getValue(VoltaicBlockStates.HAS_SCAFFOLDING)) {
 			return 0;
 		}
 
@@ -269,7 +269,7 @@ public abstract class AbstractConnectBlock extends GenericEntityBlockWaterloggab
 
 	@Override
 	public VoxelShape getVisualShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		if (!state.getValue(ModularElectricityBlockStates.HAS_SCAFFOLDING)) {
+		if (!state.getValue(VoltaicBlockStates.HAS_SCAFFOLDING)) {
 			return super.getVisualShape(state, level, pos, context);
 		}
 		if (level.getBlockEntity(pos) instanceof GenericConnectTile connect) {
@@ -307,7 +307,7 @@ public abstract class AbstractConnectBlock extends GenericEntityBlockWaterloggab
 
 				connect.setScaffoldBlock(Blocks.AIR.defaultBlockState());
 
-				level.setBlockAndUpdate(pos, level.getBlockState(pos).setValue(ModularElectricityBlockStates.HAS_SCAFFOLDING, false));
+				level.setBlockAndUpdate(pos, level.getBlockState(pos).setValue(VoltaicBlockStates.HAS_SCAFFOLDING, false));
 
 				if (!player.isCreative()) {
 					if (!player.addItem(new ItemStack(scaffold))) {

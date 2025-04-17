@@ -11,7 +11,7 @@ import voltaic.compatibility.jei.utils.gui.types.BackgroundObject;
 import voltaic.compatibility.jei.utils.gui.types.ItemSlotObject;
 import voltaic.compatibility.jei.utils.gui.types.fluidgauge.AbstractFluidGaugeObject;
 import voltaic.compatibility.jei.utils.gui.types.gasgauge.AbstractGasGaugeObject;
-import voltaic.compatibility.jei.utils.ingredients.ModularElectricityJeiTypes;
+import voltaic.compatibility.jei.utils.ingredients.VoltaicJeiTypes;
 import voltaic.compatibility.jei.utils.ingredients.IngredientRendererGasStack;
 import voltaic.compatibility.jei.utils.label.AbstractLabelWrapper;
 import voltaic.prefab.utilities.math.MathUtils;
@@ -329,7 +329,7 @@ public abstract class AbstractRecipeCategory<T> implements IRecipeCategory<T> {
 
             int oneMinusHeight = wrapper.getHeight() - height;
 
-            builder.addSlot(role, wrapper.getX() + 1, wrapper.getY() + wrapper.getHeight() - height).addIngredients(ModularElectricityJeiTypes.GAS_STACK, stacks).setCustomRenderer(ModularElectricityJeiTypes.GAS_STACK, new IngredientRendererGasStack(maxGaugeCap, -oneMinusHeight + 1, height, wrapper.getBarsTexture()));
+            builder.addSlot(role, wrapper.getX() + 1, wrapper.getY() + wrapper.getHeight() - height).addIngredients(VoltaicJeiTypes.GAS_STACK, stacks).setCustomRenderer(VoltaicJeiTypes.GAS_STACK, new IngredientRendererGasStack(maxGaugeCap, -oneMinusHeight + 1, height, wrapper.getBarsTexture()));
         }
 
     }
@@ -362,7 +362,7 @@ public abstract class AbstractRecipeCategory<T> implements IRecipeCategory<T> {
 
             int oneMinusHeight = wrapper.getHeight() - height;
 
-            builder.addSlot(role, wrapper.getX() + 1, wrapper.getY() + wrapper.getHeight() - height).addIngredient(ModularElectricityJeiTypes.GAS_STACK, stack).setCustomRenderer(ModularElectricityJeiTypes.GAS_STACK, new IngredientRendererGasStack(maxGaugeCap, -oneMinusHeight + 1, height, wrapper.getBarsTexture()));
+            builder.addSlot(role, wrapper.getX() + 1, wrapper.getY() + wrapper.getHeight() - height).addIngredient(VoltaicJeiTypes.GAS_STACK, stack).setCustomRenderer(VoltaicJeiTypes.GAS_STACK, new IngredientRendererGasStack(maxGaugeCap, -oneMinusHeight + 1, height, wrapper.getBarsTexture()));
         }
     }
 

@@ -13,7 +13,7 @@ public class IngredientHelperGasStack implements IIngredientHelper<GasStack> {
 
 	@Override
 	public IIngredientType<GasStack> getIngredientType() {
-		return ModularElectricityJeiTypes.GAS_STACK;
+		return VoltaicJeiTypes.GAS_STACK;
 	}
 
 	@Override

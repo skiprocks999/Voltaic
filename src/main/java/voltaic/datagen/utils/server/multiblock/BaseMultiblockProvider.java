@@ -8,7 +8,7 @@ import java.util.concurrent.CompletableFuture;
 import voltaic.Voltaic;
 import voltaic.api.multiblock.assemblybased.Multiblock;
 import voltaic.api.multiblock.assemblybased.MultiblockSlaveNode;
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Vec3i;
@@ -65,14 +65,14 @@ public abstract class BaseMultiblockProvider extends JsonCodecProvider<Multibloc
 
             placeState = slaveNode.placeState();
 
-            if (placeState.hasProperty(ModularElectricityBlockStates.FACING)) {
-                placeState = placeState.setValue(ModularElectricityBlockStates.FACING, placeState.getValue(ModularElectricityBlockStates.FACING).getCounterClockWise());
+            if (placeState.hasProperty(VoltaicBlockStates.FACING)) {
+                placeState = placeState.setValue(VoltaicBlockStates.FACING, placeState.getValue(VoltaicBlockStates.FACING).getCounterClockWise());
             }
 
             replaceState = slaveNode.replaceState();
 
-            if (replaceState.hasProperty(ModularElectricityBlockStates.FACING)) {
-                replaceState = replaceState.setValue(ModularElectricityBlockStates.FACING, replaceState.getValue(ModularElectricityBlockStates.FACING).getCounterClockWise());
+            if (replaceState.hasProperty(VoltaicBlockStates.FACING)) {
+                replaceState = replaceState.setValue(VoltaicBlockStates.FACING, replaceState.getValue(VoltaicBlockStates.FACING).getCounterClockWise());
             }
 
             shape = slaveNode.renderShape();

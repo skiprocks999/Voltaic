@@ -18,7 +18,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.event.RegisterShadersEvent;
 
 //@EventBusSubscriber(modid = References.ID, bus = Bus.MOD, value = Dist.CLIENT)
-public class ElectrodynamicsShaders extends RenderType {
+public class VoltaicShaders extends RenderType {
 
 	/* LOGGER INSTANCE & RANDOM SOURCE */
 	public static final Logger LOGGER = LoggerFactory.getLogger("Electrodynamics: Shaders");
@@ -59,7 +59,7 @@ public class ElectrodynamicsShaders extends RenderType {
 		uniformAlphaCutoff.set(Math.min(cutoff, 1.0F));
 	}
 
-	private ElectrodynamicsShaders(String name, VertexFormat format, Mode mode, int bufferSize, boolean affectsCrumbling, boolean sortOnUpload, Runnable setupState, Runnable clearState) {
+	private VoltaicShaders(String name, VertexFormat format, Mode mode, int bufferSize, boolean affectsCrumbling, boolean sortOnUpload, Runnable setupState, Runnable clearState) {
 		super(name, format, mode, bufferSize, affectsCrumbling, sortOnUpload, setupState, clearState);
 		throw new UnsupportedOperationException("No");
 	}

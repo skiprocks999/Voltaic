@@ -4,7 +4,7 @@ import voltaic.api.gas.Gas;
 import voltaic.api.gas.GasStack;
 import mezz.jei.api.ingredients.IIngredientTypeWithSubtypes;
 
-public class ModularElectricityJeiTypes {
+public class VoltaicJeiTypes {
 
 	public static final IIngredientTypeWithSubtypes<Gas, GasStack> GAS_STACK = new IIngredientTypeWithSubtypes<>() {
 

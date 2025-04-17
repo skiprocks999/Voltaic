@@ -10,7 +10,7 @@ import voltaic.api.IWrenchItem;
 import voltaic.api.electricity.ICapabilityElectrodynamic;
 import voltaic.api.gas.IGasHandler;
 import voltaic.api.gas.GasTank;
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import voltaic.common.item.ItemUpgrade;
 import voltaic.prefab.properties.PropertyManager;
 import voltaic.prefab.properties.variant.AbstractProperty;
@@ -243,7 +243,7 @@ public abstract class GenericTile extends BlockEntity implements Nameable, IProp
      * @return
      */
     public Direction getFacing() {
-        return getBlockState().hasProperty(ModularElectricityBlockStates.FACING) ? getBlockState().getValue(ModularElectricityBlockStates.FACING) : Direction.NORTH;
+        return getBlockState().hasProperty(VoltaicBlockStates.FACING) ? getBlockState().getValue(VoltaicBlockStates.FACING) : Direction.NORTH;
     }
 
     public void onEnergyChange(ComponentElectrodynamic cap) {

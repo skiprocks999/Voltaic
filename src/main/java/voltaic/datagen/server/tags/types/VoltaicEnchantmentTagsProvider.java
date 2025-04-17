@@ -5,7 +5,7 @@ import java.util.concurrent.CompletableFuture;
 import voltaic.Voltaic;
 import org.jetbrains.annotations.Nullable;
 
-import voltaic.common.tags.ModularElectricityTags;
+import voltaic.common.tags.VoltaicTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EnchantmentTagsProvider;
@@ -20,8 +20,8 @@ public class VoltaicEnchantmentTagsProvider extends EnchantmentTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(ModularElectricityTags.Enchantments.EFFICIENCY).add(Enchantments.EFFICIENCY);
-        tag(ModularElectricityTags.Enchantments.UNBREAKING).add(Enchantments.UNBREAKING);
-        tag(ModularElectricityTags.Enchantments.SILK_TOUCH).add(Enchantments.SILK_TOUCH);
+        tag(VoltaicTags.Enchantments.EFFICIENCY).add(Enchantments.EFFICIENCY);
+        tag(VoltaicTags.Enchantments.UNBREAKING).add(Enchantments.UNBREAKING);
+        tag(VoltaicTags.Enchantments.SILK_TOUCH).add(Enchantments.SILK_TOUCH);
     }
 }

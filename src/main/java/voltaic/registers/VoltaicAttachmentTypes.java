@@ -7,7 +7,7 @@ import voltaic.api.radiation.RadiationManager;
 import voltaic.api.radiation.SimpleRadiationSource;
 import voltaic.api.radiation.util.BlockPosVolume;
 import voltaic.api.radiation.util.IRadiationManager;
-import voltaic.common.settings.ModularElectricityConstants;
+import voltaic.common.settings.VoltaicConstants;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -159,7 +159,7 @@ public class VoltaicAttachmentTypes {
         }
     }).build());
 
-    public static final DeferredHolder<AttachmentType<?>, AttachmentType<Double>> DEFAULT_DISSIPATION = ATTACHMENT_TYPES.register("defaultdissipation", () -> AttachmentType.builder(() -> ModularElectricityConstants.BACKROUND_RADIATION_DISSIPATION).serialize(Codec.DOUBLE).build());
+    public static final DeferredHolder<AttachmentType<?>, AttachmentType<Double>> DEFAULT_DISSIPATION = ATTACHMENT_TYPES.register("defaultdissipation", () -> AttachmentType.builder(() -> VoltaicConstants.BACKROUND_RADIATION_DISSIPATION).serialize(Codec.DOUBLE).build());
 
     public static final DeferredHolder<AttachmentType<?>, AttachmentType<RadiationManager>> RADIATION_MANAGER = ATTACHMENT_TYPES.register("radiationmanager", () -> AttachmentType.builder(RadiationManager::new).build());
     public static final DeferredHolder<AttachmentType<?>, AttachmentType<Double>> RECIEVED_RADIATIONAMOUNT = ATTACHMENT_TYPES.register("recievedradiationamount", () -> AttachmentType.builder(() -> Double.valueOf(0.0)).serialize(Codec.DOUBLE).build());

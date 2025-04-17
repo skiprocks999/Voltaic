@@ -12,7 +12,7 @@ import voltaic.api.gas.GasAction;
 import voltaic.api.gas.GasStack;
 import voltaic.api.gas.GasTank;
 import voltaic.api.gas.PropertyGasTank;
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import voltaic.prefab.tile.GenericTile;
 import voltaic.prefab.tile.components.CapabilityInputType;
 import voltaic.prefab.tile.components.IComponentType;
@@ -136,8 +136,8 @@ public class ComponentGasHandlerSimple extends PropertyGasTank implements ICompo
 
     @Override
     public void refreshIfUpdate(BlockState oldState, BlockState newState) {
-        if (isSided && oldState.hasProperty(ModularElectricityBlockStates.FACING) && newState.hasProperty(ModularElectricityBlockStates.FACING) && oldState.getValue(ModularElectricityBlockStates.FACING) != newState.getValue(ModularElectricityBlockStates.FACING)) {
-            defineOptionals(newState.getValue(ModularElectricityBlockStates.FACING));
+        if (isSided && oldState.hasProperty(VoltaicBlockStates.FACING) && newState.hasProperty(VoltaicBlockStates.FACING) && oldState.getValue(VoltaicBlockStates.FACING) != newState.getValue(VoltaicBlockStates.FACING)) {
+            defineOptionals(newState.getValue(VoltaicBlockStates.FACING));
         }
     }
 

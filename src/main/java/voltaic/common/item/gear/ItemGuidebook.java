@@ -3,7 +3,7 @@ package voltaic.common.item.gear;
 import java.util.List;
 
 import voltaic.common.inventory.container.ContainerGuidebook;
-import voltaic.common.item.ItemElectrodynamics;
+import voltaic.common.item.ItemVoltaic;
 import voltaic.prefab.utilities.VoltaicTextUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
@@ -19,7 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
-public class ItemGuidebook extends ItemElectrodynamics {
+public class ItemGuidebook extends ItemVoltaic {
 
 	private static final String LINK = "https://wiki.aurilis.dev";
 	private static final Component CONTAINER_TITLE = Component.translatable("container.guidebook");

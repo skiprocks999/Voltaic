@@ -24,7 +24,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
-public class ItemUpgrade extends ItemElectrodynamics {
+public class ItemUpgrade extends ItemVoltaic {
 	public final SubtypeItemUpgrade subtype;
 
 	private static final DecimalFormat FORMATTER = new DecimalFormat("0.00");

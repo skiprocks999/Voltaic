@@ -18,7 +18,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.VertexFormat;
 
 import voltaic.Voltaic;
-import voltaic.common.block.states.ModularElectricityBlockStates;
+import voltaic.common.block.states.VoltaicBlockStates;
 import voltaic.prefab.utilities.math.Color;
 import voltaic.prefab.utilities.math.MathUtils;
 import net.minecraft.CrashReport;
@@ -109,8 +109,8 @@ public class RenderingUtils {
     public static void prepareRotationalTileModel(BlockEntity tile, PoseStack stack) {
         BlockState state = tile.getBlockState();
         stack.translate(0.5, 7.0 / 16.0, 0.5);
-        if (state.hasProperty(ModularElectricityBlockStates.FACING)) {
-            Direction facing = state.getValue(ModularElectricityBlockStates.FACING);
+        if (state.hasProperty(VoltaicBlockStates.FACING)) {
+            Direction facing = state.getValue(VoltaicBlockStates.FACING);
             if (facing == Direction.NORTH) {
                 stack.mulPose(MathUtils.rotQuaternionDeg(0, 90, 0));
                 // stack.mulPose(new Quaternionf(0, 90, 0, true));

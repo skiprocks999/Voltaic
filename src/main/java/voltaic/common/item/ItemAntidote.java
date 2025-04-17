@@ -15,7 +15,7 @@ import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
-public class ItemAntidote extends ItemElectrodynamics {
+public class ItemAntidote extends ItemVoltaic {
 
     public ItemAntidote(Properties properties, Holder<CreativeModeTab> creativeTab) {
         super(properties, creativeTab);

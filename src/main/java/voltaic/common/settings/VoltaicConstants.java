@@ -4,8 +4,8 @@ import voltaic.api.configuration.BooleanValue;
 import voltaic.api.configuration.Configuration;
 import voltaic.api.configuration.DoubleValue;
 
-@Configuration(name = "Modular Electricity")
-public class ModularElectricityConstants {
+@Configuration(name = "Voltaic")
+public class VoltaicConstants {
 	@BooleanValue(def = true)
 	public static boolean DISPENSE_GUIDEBOOK = true;
 	@DoubleValue(def = 100)

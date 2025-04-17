@@ -2,7 +2,7 @@ package voltaic.common.condition;
 
 import com.mojang.serialization.MapCodec;
 
-import voltaic.common.settings.ModularElectricityConstants;
+import voltaic.common.settings.VoltaicConstants;
 import net.neoforged.neoforge.common.conditions.ICondition;
 
 public class ConfigCondition implements ICondition {
@@ -17,7 +17,7 @@ public class ConfigCondition implements ICondition {
 
 	@Override
 	public boolean test(IContext context) {
-		return ModularElectricityConstants.DISPENSE_GUIDEBOOK;
+		return VoltaicConstants.DISPENSE_GUIDEBOOK;
 	}
 
     @Override
