@@ -24,6 +24,9 @@ public class RadiationTooltipHandler {
 
         if(Screen.hasShiftDown()) {
             ItemStack stack = event.getItemStack();
+            if(stack.isEmpty()) {
+                return;
+            }
             if(stack.getItem() instanceof BlockItem blockItem) {
                 RadiationShielding shielding = RadiationShieldingRegister.getValue(blockItem.getBlock());
                 if(shielding.amount() <= 0) {
@@ -32,7 +35,7 @@ public class RadiationTooltipHandler {
                 event.getTooltipElements().add(Either.left(VoltaicTextUtils.tooltip("radiationshieldingamount", ChatFormatter.getChatDisplayShort(shielding.amount(), DisplayUnits.RAD).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_GRAY)));
                 //event.getTooltipElements().add(Either.left(NuclearTextUtils.tooltip("radiationshieldinglevel", Component.literal(shielding.level() + "").withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_GRAY)));
             }
-        } else if(Screen.hasControlDown()) {
+        } else if(Screen.hasControlDown() && !event.getItemStack().isEmpty()) {
             event.getTooltipElements().add(Either.left(ChatFormatter.getChatDisplayShort(RadioactiveItemRegister.getValue(event.getItemStack().getItem()).amount(), DisplayUnits.RAD).withStyle(ChatFormatting.YELLOW)));
         }
 

@@ -3,6 +3,8 @@ package voltaic.common.item;
 import java.text.DecimalFormat;
 import java.util.List;
 
+import net.minecraft.core.Holder;
+import net.minecraft.world.item.CreativeModeTab;
 import org.apache.commons.lang3.StringUtils;
 
 import voltaic.common.item.subtype.SubtypeItemUpgrade;
@@ -29,8 +31,8 @@ public class ItemUpgrade extends ItemVoltaic {
 
 	private static final DecimalFormat FORMATTER = new DecimalFormat("0.00");
 
-	public ItemUpgrade(Properties properties, SubtypeItemUpgrade subtype) {
-		super(properties.stacksTo(subtype.maxSize), VoltaicCreativeTabs.MAIN);
+	public ItemUpgrade(Properties properties, SubtypeItemUpgrade subtype, Holder<CreativeModeTab> creativeTab) {
+		super(properties.stacksTo(subtype.maxSize), creativeTab);
 		this.subtype = subtype;
 	}
 

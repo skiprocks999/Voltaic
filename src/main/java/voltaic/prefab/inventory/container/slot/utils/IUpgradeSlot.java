@@ -2,10 +2,10 @@ package voltaic.prefab.inventory.container.slot.utils;
 
 import java.util.List;
 
-import net.minecraft.world.item.Item;
+import voltaic.common.item.subtype.SubtypeItemUpgrade;
 
 public interface IUpgradeSlot {
 
-	public List<Item> getUpgrades();
+	public List<SubtypeItemUpgrade> getUpgrades();
 
 }

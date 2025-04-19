@@ -7,6 +7,7 @@ import voltaic.Voltaic;
 import voltaic.api.screen.ITexture;
 import voltaic.api.screen.component.ISlotTexture;
 import voltaic.api.screen.component.TextSupplier;
+import voltaic.common.item.subtype.SubtypeItemUpgrade;
 import voltaic.prefab.inventory.container.slot.utils.IUpgradeSlot;
 import voltaic.prefab.screen.component.ScreenComponentGeneric;
 import voltaic.prefab.utilities.VoltaicTextUtils;
@@ -17,7 +18,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.Item;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
@@ -84,8 +84,8 @@ public class ScreenComponentSlot extends ScreenComponentGeneric {
 
 				List<FormattedCharSequence> tooltips = new ArrayList<>();
 				tooltips.add(VoltaicTextUtils.tooltip("validupgrades").getVisualOrderText());
-				for (Item item : upgrade.getUpgrades()) {
-					tooltips.add(item.getDescription().copy().withStyle(ChatFormatting.GRAY).getVisualOrderText());
+				for (SubtypeItemUpgrade item : upgrade.getUpgrades()) {
+					tooltips.add(item.name.withStyle(ChatFormatting.GRAY).getVisualOrderText());
 				}
 				graphics.renderTooltip(gui.getFontRenderer(), tooltips, xAxis, yAxis);
 			}

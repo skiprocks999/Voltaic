@@ -79,6 +79,11 @@ public class SingleItemRecipeBuilder implements RecipeBuilder {
         return this;
     }
 
+    public SingleItemRecipeBuilder conditions(ICondition... conditions) {
+        this.conditions = conditions;
+        return this;
+    }
+
     @Override
     public Item getResult() {
         return result;

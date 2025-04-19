@@ -145,5 +145,20 @@
   "tooltip.voltaic.scannerpattern": "Sonar Pattern",
   "tooltip.voltaic.tankmaxin": "In %1$s : %2$s",
   "tooltip.voltaic.tankmaxout": "Out %1$s : %2$s",
-  "tooltip.voltaic.transformer.energyloss": "Efficiency: %s"
+  "tooltip.voltaic.transformer.energyloss": "Efficiency: %s",
+  "tooltip.voltaic.upgrade.advancedcapacity": "Advanced Capacity",
+  "tooltip.voltaic.upgrade.advancedspeed": "Advanced Speed",
+  "tooltip.voltaic.upgrade.basiccapacity": "Basic Capacity",
+  "tooltip.voltaic.upgrade.basicspeed": "Basic Speed",
+  "tooltip.voltaic.upgrade.experience": "Experience",
+  "tooltip.voltaic.upgrade.fortune": "Fortune",
+  "tooltip.voltaic.upgrade.improvedsolarcell": "Improved Solar Cell",
+  "tooltip.voltaic.upgrade.iteminput": "Auto-Injector",
+  "tooltip.voltaic.upgrade.itemoutput": "Auto-Ejector",
+  "tooltip.voltaic.upgrade.itemvoid": "Item Void",
+  "tooltip.voltaic.upgrade.range": "Range",
+  "tooltip.voltaic.upgrade.silktouch": "Silk Touch",
+  "tooltip.voltaic.upgrade.stator": "Improved Stator",
+  "tooltip.voltaic.upgrade.unbreaking": "Unbreaking",
+  "tooltip.voltaic.validupgrades": "Valid Upgrades:"
 }

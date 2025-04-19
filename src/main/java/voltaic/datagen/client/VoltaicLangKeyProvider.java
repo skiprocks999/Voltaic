@@ -97,6 +97,23 @@ public class VoltaicLangKeyProvider extends BaseLangKeyProvider {
                 addTooltip("inventoryio.back", "Back");
                 addTooltip("inventoryio.slotmap", "Slot Map");
 
+                addTooltip("validupgrades", "Valid Upgrades:");
+                addTooltip("upgrade.basiccapacity", "Basic Capacity");
+                addTooltip("upgrade.basicspeed", "Basic Speed");
+                addTooltip("upgrade.advancedcapacity", "Advanced Capacity");
+                addTooltip("upgrade.advancedspeed", "Advanced Speed");
+                addTooltip("upgrade.iteminput", "Auto-Injector");
+                addTooltip("upgrade.itemoutput", "Auto-Ejector");
+                addTooltip("upgrade.improvedsolarcell", "Improved Solar Cell");
+                addTooltip("upgrade.stator", "Improved Stator");
+                addTooltip("upgrade.range", "Range");
+                addTooltip("upgrade.experience", "Experience");
+                addTooltip("upgrade.itemvoid", "Item Void");
+                addTooltip("upgrade.silktouch", "Silk Touch");
+                addTooltip("upgrade.fortune", "Fortune");
+                addTooltip("upgrade.unbreaking", "Unbreaking");
+
+
                 addGuiLabel("machine.usage", "Usage: %s");
                 addGuiLabel("machine.voltage", "Voltage: %s");
                 addGuiLabel("machine.current", "Current: %s");

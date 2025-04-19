@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.network.chat.MutableComponent;
 import org.apache.logging.log4j.util.TriConsumer;
 
 import voltaic.api.ISubtype;
@@ -13,6 +14,7 @@ import voltaic.prefab.tile.components.type.ComponentInventory;
 import voltaic.prefab.tile.components.type.ComponentProcessor;
 import voltaic.prefab.utilities.ItemUtils;
 import voltaic.prefab.utilities.NBTUtils;
+import voltaic.prefab.utilities.VoltaicTextUtils;
 import voltaic.registers.VoltaicDataComponentTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -24,23 +26,23 @@ import net.neoforged.neoforge.items.IItemHandler;
 
 public enum SubtypeItemUpgrade implements ISubtype {
 
-    basiccapacity(2),
+    basiccapacity(2, VoltaicTextUtils.tooltip("upgrade.basiccapacity")),
     // box.currentCapacityMultiplier.set(Math.min(box.currentCapacityMultiplier.get()
     // * 1.5, Math.pow(1.5, 3)));
     // box.currentVoltageMultiplier.set(Math.min(box.currentVoltageMultiplier.get()
     // * 2, 2));
 
-    basicspeed(3),
+    basicspeed(3, VoltaicTextUtils.tooltip("upgrade.basicspeed")),
     // processor.operatingSpeed.set(Math.min(processor.operatingSpeed.get() * 1.5,
     // Math.pow(1.5, 3)));
 
-    advancedcapacity(4),
+    advancedcapacity(4, VoltaicTextUtils.tooltip("upgrade.advancedcapacity")),
     // box.currentCapacityMultiplier.set(Math.min(box.currentCapacityMultiplier.get()
     // * 2.25, Math.pow(2.25, 3)));
     // box.currentVoltageMultiplier.set(Math.min(box.currentVoltageMultiplier.get()
     // * 4, 4));
 
-    advancedspeed(3),
+    advancedspeed(3, VoltaicTextUtils.tooltip("upgrade.advancedspeed")),
     // processor.operatingSpeed.set(Math.min(processor.operatingSpeed.get() * 2.25,
     // Math.pow(2.25, 3)));
 
@@ -85,7 +87,7 @@ public enum SubtypeItemUpgrade implements ISubtype {
             }
         }
 
-    }, 1),
+    }, 1, VoltaicTextUtils.tooltip("upgrade.iteminput")),
     // I can't really optimize this one any more than it is
     itemoutput((processor, upgrade, index) -> {
         GenericTile holder = processor.getHolder();
@@ -142,34 +144,38 @@ public enum SubtypeItemUpgrade implements ISubtype {
             }
         }
 
-    }, 1),
-    improvedsolarcell(1),
+    }, 1, VoltaicTextUtils.tooltip("upgrade.itemoutput")),
+    improvedsolarcell(1, VoltaicTextUtils.tooltip("upgrade.improvedsolarcell")),
     // generator.setMultiplier(2.25);
-    stator(1),
+    stator(1, VoltaicTextUtils.tooltip("upgrade.stator")),
     // generator.setMultiplier(2.25);
-    range(12),
-    experience(1),
-    itemvoid(1),
-    silktouch(1),
-    fortune(3),
-    unbreaking(3);
+    range(12, VoltaicTextUtils.tooltip("upgrade.range")),
+    experience(1, VoltaicTextUtils.tooltip("upgrade.experience")),
+    itemvoid(1, VoltaicTextUtils.tooltip("upgrade.itemvoid")),
+    silktouch(1, VoltaicTextUtils.tooltip("upgrade.silktouch")),
+    fortune(3, VoltaicTextUtils.tooltip("upgrade.fortune")),
+    unbreaking(3, VoltaicTextUtils.tooltip("upgrade.unbreaking"));
 
     public final TriConsumer<ComponentProcessor, ItemStack, Integer> applyUpgrade;
     public final int maxSize;
     // does it have an appliable effect?
     public final boolean isEmpty;
 
-    SubtypeItemUpgrade(TriConsumer<ComponentProcessor, ItemStack, Integer> applyUpgrade, int maxSize) {
+    public final MutableComponent name;
+
+    SubtypeItemUpgrade(TriConsumer<ComponentProcessor, ItemStack, Integer> applyUpgrade, int maxSize, MutableComponent name) {
         this.applyUpgrade = applyUpgrade;
         this.maxSize = maxSize;
         isEmpty = false;
+        this.name = name;
     }
 
-    SubtypeItemUpgrade(int maxStackSize) {
+    SubtypeItemUpgrade(int maxStackSize, MutableComponent name) {
         applyUpgrade = (processor, upgrade, index) -> {
         };
         maxSize = maxStackSize;
         isEmpty = true;
+        this.name = name;
     }
 
     @Override
