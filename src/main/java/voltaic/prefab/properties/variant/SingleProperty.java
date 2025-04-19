@@ -85,7 +85,7 @@ public class SingleProperty<T> extends AbstractProperty<T, SinglePropertyType<T,
     private boolean checkForChange(T updated) {
         boolean shouldUpdate = value == null && updated != null;
         if (value != null && updated != null) {
-            shouldUpdate = !getType().hasChanged(value, updated);
+            shouldUpdate = !getType().isEqual(value, updated);
         }
         if (shouldUpdate) {
             setDirty();

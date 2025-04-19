@@ -17,7 +17,7 @@ public class ComponentContainerProvider implements IComponent, MenuProvider {
 	protected String name = "";
 
 	public ComponentContainerProvider(String name, GenericTile holder) {
-		this.name = name;
+		this.name = "container." + name;
 		this.holder = holder;
 	}
 

@@ -14,14 +14,16 @@ import net.minecraft.world.level.block.Blocks;
 import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
-public class BaseRadiationShieldingProvider implements DataProvider {
+public abstract class BaseRadiationShieldingProvider implements DataProvider {
 
     public static final String LOC = "data/" + Voltaic.ID + "/" + RadiationShieldingRegister.FOLDER + "/" + RadiationShieldingRegister.FILE_NAME;
 
     private final PackOutput output;
+    private final String modID;
 
-    public BaseRadiationShieldingProvider(PackOutput output) {
+    public BaseRadiationShieldingProvider(PackOutput output, String modID) {
         this.output = output;
+        this.modID = modID;
     }
 
     @Override
@@ -34,11 +36,9 @@ public class BaseRadiationShieldingProvider implements DataProvider {
         return CompletableFuture.allOf(DataProvider.saveStable(cache, json, parent));
     }
 
-    public void getRadiationShielding(JsonObject json) {
-        addBlock(Blocks.WATER, 5000, 1, json);
-    }
+    public abstract void getRadiationShielding(JsonObject json);
 
-    private static void addBlock(Block block, double radiationAmount, double radiationLevel, JsonObject json) {
+    public static void addBlock(Block block, double radiationAmount, double radiationLevel, JsonObject json) {
         JsonObject data = new JsonObject();
         json.add(BuiltInRegistries.BLOCK.getKey(block).toString(), RadiationShielding.CODEC.encode(new RadiationShielding(radiationAmount, radiationLevel), JsonOps.INSTANCE, data).getOrThrow());
     }
@@ -50,7 +50,7 @@ public class BaseRadiationShieldingProvider implements DataProvider {
 
     @Override
     public String getName() {
-        return "Nuclear Science Radiation Shielding Provider";
+        return modID + " Radiation Shielding Provider";
     }
 
 

@@ -9,6 +9,7 @@ import voltaic.datagen.client.VoltaicItemModelsProvider;
 import voltaic.datagen.client.VoltaicLangKeyProvider;
 import voltaic.datagen.client.VoltaicSoundProvider;
 import voltaic.datagen.server.VoltaicAdvancementProvider;
+import voltaic.datagen.server.VoltaicRadiationShieldingProvider;
 import voltaic.datagen.server.recipe.VoltaicRecipeProvider;
 import voltaic.datagen.utils.client.BaseLangKeyProvider.Locale;
 import voltaic.datagen.server.tags.VoltaicTagsProvider;
@@ -57,6 +58,7 @@ public class DataGenerators {
             generator.addProvider(true, new VoltaicItemModelsProvider(output, helper));
             generator.addProvider(true, new VoltaicLangKeyProvider(output, Locale.EN_US));
             generator.addProvider(true, new VoltaicSoundProvider(output, helper));
+            generator.addProvider(true, new VoltaicRadiationShieldingProvider(output));
         }
     }
 

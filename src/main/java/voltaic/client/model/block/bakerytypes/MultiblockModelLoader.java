@@ -41,7 +41,7 @@ import net.neoforged.neoforge.client.model.geometry.IUnbakedGeometry;
 
 public class MultiblockModelLoader implements IGeometryLoader<MultiblockModelLoader.MultiblockModelGeometry> {
 
-    public static final ResourceLocation ID = Voltaic.rl("electrodynamicsmultiblockmodelloader");
+    public static final ResourceLocation ID = Voltaic.rl("voltaicmultiblockmodelloader");
 
     public static final MultiblockModelLoader INSTANCE = new MultiblockModelLoader();
 

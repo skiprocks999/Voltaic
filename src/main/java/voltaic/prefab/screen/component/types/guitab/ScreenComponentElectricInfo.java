@@ -66,7 +66,7 @@ public class ScreenComponentElectricInfo extends ScreenComponentGuiTab {
 					} else {
 						double satisfaction = 0;
 						if (wattage == null) {
-							double perTick = tile.hasComponent(IComponentType.Processor) ? tile.<ComponentProcessor>getComponent(IComponentType.Processor).getTotalUsage() : 0.0;
+							double perTick = tile.hasComponent(IComponentType.Processor) ? tile.<ComponentProcessor>getComponent(IComponentType.Processor).getTotalUsage() * tile.<ComponentProcessor>getComponent(IComponentType.Processor).operatingSpeed.getValue() : 0.0;
 							list.add(VoltaicTextUtils.gui("machine.usage", ChatFormatter.getChatDisplayShort(perTick * 20, DisplayUnits.WATT).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_GRAY).getVisualOrderText());
 							if(perTick == 0) {
 								satisfaction = 1;

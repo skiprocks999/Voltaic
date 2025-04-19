@@ -13,7 +13,7 @@ import voltaic.prefab.properties.variant.AbstractProperty;
 
 public interface IPropertyType<TYPE, BUFFERTYPE> {
 
-    default boolean hasChanged(TYPE currentValue, TYPE newValue) {
+    default boolean isEqual(TYPE currentValue, TYPE newValue) {
         return currentValue.equals(newValue);
     }
 

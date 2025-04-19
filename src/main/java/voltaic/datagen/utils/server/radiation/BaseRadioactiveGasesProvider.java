@@ -15,14 +15,16 @@ import net.minecraft.tags.TagKey;
 import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
-public class BaseRadioactiveGasesProvider implements DataProvider {
+public abstract class BaseRadioactiveGasesProvider implements DataProvider {
 
     public static final String LOC = "data/" + Voltaic.ID + "/" + RadioactiveGasRegister.FOLDER + "/" + RadioactiveGasRegister.FILE_NAME;
 
     private final PackOutput output;
+    private final String modID;
 
-    public BaseRadioactiveGasesProvider(PackOutput output) {
+    public BaseRadioactiveGasesProvider(PackOutput output, String modID) {
         this.output = output;
+        this.modID = modID;
     }
 
     @Override
@@ -35,26 +37,22 @@ public class BaseRadioactiveGasesProvider implements DataProvider {
         return CompletableFuture.allOf(DataProvider.saveStable(cache, json, parent));
     }
 
-    public void getRadioactiveItems(JsonObject json) {
-
-
-
-    }
+    public abstract void getRadioactiveItems(JsonObject json);
 
     @SuppressWarnings("unused")
-    private void addItem(Gas gas, double radiationAmount, double radiationStrength, JsonObject json) {
+    public void addItem(Gas gas, double radiationAmount, double radiationStrength, JsonObject json) {
         JsonObject data = new JsonObject();
         json.add(VoltaicGases.GAS_REGISTRY.getKey(gas).toString(), RadioactiveObject.CODEC.encode(new RadioactiveObject(radiationStrength, radiationAmount), JsonOps.INSTANCE, data).getOrThrow());
     }
 
-    private void addTag(TagKey<Gas> tag, double radiationAmount, double radiationStrength, JsonObject json) {
+    public void addTag(TagKey<Gas> tag, double radiationAmount, double radiationStrength, JsonObject json) {
         JsonObject data = new JsonObject();
         json.add("#" + tag.location().toString(), RadioactiveObject.CODEC.encode(new RadioactiveObject(radiationStrength, radiationAmount), JsonOps.INSTANCE, data).getOrThrow());
     }
 
     @Override
     public String getName() {
-        return "Nuclear Science Radioactive Gases Provider";
+        return modID + " Radioactive Gases Provider";
     }
 
 }

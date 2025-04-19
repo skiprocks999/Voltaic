@@ -168,6 +168,13 @@ public class ComponentProcessor implements IComponent {
         return this;
     }
 
+    public ComponentProcessor usageForAll(double usage) {
+        for(int index = 0; index <  numProcessors; index++) {
+            this.usage.setValue(usage, index);
+        }
+        return this;
+    }
+
     public ComponentProcessor usage(double usage, int index) {
         this.usage.setValue(usage, index);
         return this;
@@ -187,6 +194,13 @@ public class ComponentProcessor implements IComponent {
 
     public ComponentProcessor requiredTicks(long requiredTicks, int index) {
         this.requiredTicks.setValue((double) requiredTicks, index);
+        return this;
+    }
+
+    public ComponentProcessor requiredTicksForAll(long requiredTicks) {
+        for(int index = 0; index <  numProcessors; index++) {
+            this.requiredTicks.setValue((double) requiredTicks, index);
+        }
         return this;
     }
 
@@ -249,6 +263,25 @@ public class ComponentProcessor implements IComponent {
 
     public boolean isActive(int index) {
         return isActive.getValue()[index];
+    }
+
+    public boolean isAnyActive() {
+        for(int i = 0; i < numProcessors; i++) {
+            if(isActive(i)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int getTotalActive() {
+        int count = 0;
+        for(int i = 0; i < numProcessors; i++) {
+            if(isActive(i)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public void setShouldKeepProgress(boolean should, int index) {

@@ -3,14 +3,19 @@ package voltaic.compatibility.jei;
 import java.util.ArrayList;
 import java.util.List;
 
+import mezz.jei.api.registration.IGuiHandlerRegistration;
 import org.jetbrains.annotations.NotNull;
 
 import voltaic.Voltaic;
 import voltaic.api.gas.Gas;
 import voltaic.api.gas.GasStack;
+import voltaic.client.guidebook.ScreenGuidebook;
+import voltaic.compatibility.jei.screenhandlers.ScreenHandlerGuidebook;
+import voltaic.compatibility.jei.screenhandlers.ScreenHandlerMaterialScreen;
 import voltaic.compatibility.jei.utils.ingredients.VoltaicJeiTypes;
 import voltaic.compatibility.jei.utils.ingredients.IngredientHelperGasStack;
 import voltaic.compatibility.jei.utils.ingredients.IngredientRendererGasStack;
+import voltaic.prefab.screen.types.GenericMaterialScreen;
 import voltaic.registers.VoltaicGases;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -32,6 +37,12 @@ public class VoltaicJEIPlugin implements IModPlugin {
     @Override
     public void registerIngredients(IModIngredientRegistration registration) {
         registration.register(VoltaicJeiTypes.GAS_STACK, new ArrayList<>(), new IngredientHelperGasStack(), IngredientRendererGasStack.LIST_RENDERER, GasStack.CODEC);
+    }
+
+    @Override
+    public void registerGuiHandlers(IGuiHandlerRegistration registry) {
+        registry.addGenericGuiContainerHandler(ScreenGuidebook.class, new ScreenHandlerGuidebook());
+        registry.addGenericGuiContainerHandler(GenericMaterialScreen.class, new ScreenHandlerMaterialScreen());
     }
 
     @Override

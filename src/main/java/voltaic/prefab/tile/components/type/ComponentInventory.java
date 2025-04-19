@@ -1,9 +1,6 @@
 package voltaic.prefab.tile.components.type;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
@@ -125,7 +122,13 @@ public class ComponentInventory implements IComponent, WorldlyContainer {
 
         }
 
-        items = holder.property(new ListProperty<>(PropertyTypes.ITEM_STACK_LIST, "itemproperty", NonNullList.withSize(getContainerSize(), ItemStack.EMPTY)));
+        List<ItemStack> items = new ArrayList<>(inventorySize);
+
+        for(int i = 0; i < inventorySize; i++) {
+            items.add(ItemStack.EMPTY);
+        }
+
+        this.items = holder.property(new ListProperty<>(PropertyTypes.ITEM_STACK_LIST, "machineinventory", items));
 
     }
 

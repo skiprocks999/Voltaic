@@ -82,6 +82,9 @@ public class VoltaicLangKeyProvider extends BaseLangKeyProvider {
 
                 addTooltip("guidebookname", "AKA Guidebook");
 
+                addTooltip("radiationshieldingamount", "Shielding Amount: %s");
+                addTooltip("radiationshieldinglevel", "Shielding Level: %s");
+
                 addTooltip("inventoryio", "Inventory I/O");
                 addTooltip("inventoryio.presstoshow", "press to show");
                 addTooltip("inventoryio.presstohide", "press to hide");
@@ -151,6 +154,9 @@ public class VoltaicLangKeyProvider extends BaseLangKeyProvider {
                 addGuiLabel("displayunit.percentage.name", "Percent");
                 addGuiLabel("displayunit.percentage.nameplural", "Percent");
                 addGuiLabel("displayunit.percentage.symbol", "%");
+                addGuiLabel("displayunit.radsymbol", "Rad");
+                addGuiLabel("displayunit.radname", "Rad");
+                addGuiLabel("displayunit.radnameplural", "Rads");
 
                 addGuiLabel("displayunit.timeticks.name", "Tick");
                 addGuiLabel("displayunit.timeticks.nameplural", "Ticks");

@@ -15,14 +15,16 @@ import net.minecraft.world.item.Item;
 import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
-public class BaseRadioactiveItemsProvider implements DataProvider {
+public abstract class BaseRadioactiveItemsProvider implements DataProvider {
 
 	public static final String LOC = "data/" + Voltaic.ID + "/" + RadioactiveItemRegister.FOLDER + "/" + RadioactiveItemRegister.FILE_NAME;
 
 	private final PackOutput output;
+	private final String modID;
 
-	public BaseRadioactiveItemsProvider(PackOutput output) {
+	public BaseRadioactiveItemsProvider(PackOutput output, String modID) {
 		this.output = output;
+		this.modID = modID;
 	}
 
 	@Override
@@ -35,24 +37,22 @@ public class BaseRadioactiveItemsProvider implements DataProvider {
 		return CompletableFuture.allOf(DataProvider.saveStable(cache, json, parent));
 	}
 
-	public void getRadioactiveItems(JsonObject json) {
-
-	}
+	public abstract void getRadioactiveItems(JsonObject json);
 
 	@SuppressWarnings("unused")
-	private void addItem(Item item, double radiationAmount, double radiationStrength, JsonObject json) {
+	public void addItem(Item item, double radiationAmount, double radiationStrength, JsonObject json) {
 		JsonObject data = new JsonObject();
 		json.add(BuiltInRegistries.ITEM.getKey(item).toString(), RadioactiveObject.CODEC.encode(new RadioactiveObject(radiationStrength, radiationAmount), JsonOps.INSTANCE, data).getOrThrow());
 	}
 
-	private void addTag(TagKey<Item> tag, double radiationAmount, double radiationStrength, JsonObject json) {
+	public void addTag(TagKey<Item> tag, double radiationAmount, double radiationStrength, JsonObject json) {
 		JsonObject data = new JsonObject();
 		json.add("#" + tag.location().toString(), RadioactiveObject.CODEC.encode(new RadioactiveObject(radiationStrength, radiationAmount), JsonOps.INSTANCE, data).getOrThrow());
 	}
 
 	@Override
 	public String getName() {
-		return "Nuclear Science Radioactive Items Provider";
+		return modID + " Radioactive Items Provider";
 	}
 
 }

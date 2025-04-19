@@ -1,5 +1,5 @@
 {
-  "loader": "voltaic:electrodynamicsslavenodeloader",
+  "loader": "voltaic:volltaicslavenodeloader",
   "model": {
     "parent": "voltaic:block/multisubnode"
   },

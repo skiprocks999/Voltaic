@@ -92,7 +92,7 @@ public class ArrayPropertyType<TYPE, BUFFERTYPE extends ByteBuf> implements IPro
 
                 final int index = i;
 
-                singleNbtCodec.encode(arr[i], NbtOps.INSTANCE, new CompoundTag()).ifSuccess(nbt -> tag.put("" + index, nbt));
+                singleNbtCodec.encode(arr[i], NbtOps.INSTANCE, NbtOps.INSTANCE.empty()).ifSuccess(nbt -> tag.put("" + index, nbt));
 
             }
 
@@ -104,7 +104,15 @@ public class ArrayPropertyType<TYPE, BUFFERTYPE extends ByteBuf> implements IPro
 
             CompoundTag data = reader.tag().getCompound(reader.prop().getName());
 
+            if(!data.contains("size")) {
+                return reader.prop().getValue();
+            }
+
             int size = data.getInt("size");
+
+            if(size <= 0) {
+                return reader.prop().getValue();
+            }
 
             TYPE[] newArr = Arrays.copyOf(defaultArr, size);
 
@@ -114,7 +122,7 @@ public class ArrayPropertyType<TYPE, BUFFERTYPE extends ByteBuf> implements IPro
 
                 final int index = i;
 
-                singleNbtCodec.decode(NbtOps.INSTANCE, data.getCompound("" + i)).ifSuccess(pair -> newArr[index] = pair.getFirst());
+                singleNbtCodec.decode(NbtOps.INSTANCE, data.get("" + i)).ifSuccess(pair -> newArr[index] = pair.getFirst());
 
             }
 
@@ -140,11 +148,11 @@ public class ArrayPropertyType<TYPE, BUFFERTYPE extends ByteBuf> implements IPro
     }
 
     @Override
-    public boolean hasChanged(TYPE[] currentValue, TYPE[] newValue) {
+    public boolean isEqual(TYPE[] currentValue, TYPE[] newValue) {
         return comparison.test(currentValue, newValue);
     }
 
-    public boolean hasSingleChanged(TYPE val1, TYPE val2) {
+    public boolean isSingleEqual(TYPE val1, TYPE val2) {
         return singleComparison.test(val1, val2);
     }
 

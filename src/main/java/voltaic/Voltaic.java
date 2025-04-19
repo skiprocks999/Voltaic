@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.function.Consumer;
 
 import net.neoforged.fml.ModList;
+import voltaic.api.electricity.formatting.MeasurementUnits;
 import voltaic.common.reloadlistener.RadiationShieldingRegister;
 import voltaic.common.reloadlistener.RadioactiveFluidRegister;
 import voltaic.common.reloadlistener.RadioactiveGasRegister;
@@ -43,7 +44,7 @@ public class Voltaic {
     public static final Random RANDOM = new Random();
 
     public static final String ID = "voltaic";
-    public static final String NAME = "Voltaic API";
+    public static final String NAME = "Voltaic";
 
     public static final String MEKANISM_ID = "mekanism";
 
@@ -54,6 +55,7 @@ public class Voltaic {
 
     public Voltaic(IEventBus bus) {
         ELECTRODYNAMICS_LOADED = ModList.get().isLoaded(ELECTRODYNAMICS_MOD_ID);
+        MeasurementUnits.init();
         ConfigurationHandler.registerConfig(VoltaicConstants.class);
         // MUST GO BEFORE BLOCKS!!!!
         VoltaicBlockStates.init();

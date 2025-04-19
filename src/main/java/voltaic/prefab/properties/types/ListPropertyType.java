@@ -94,7 +94,7 @@ public class ListPropertyType <TYPE, BUFFERTYPE extends ByteBuf> implements IPro
 
                 final int index = i;
 
-                singleNbtCodec.encode(list.get(i), NbtOps.INSTANCE, new CompoundTag()).ifSuccess(nbt -> tag.put("" + index, nbt));
+                singleNbtCodec.encode(list.get(i), NbtOps.INSTANCE, NbtOps.INSTANCE.empty()).ifSuccess(nbt -> tag.put("" + index, nbt));
 
             }
 
@@ -106,17 +106,27 @@ public class ListPropertyType <TYPE, BUFFERTYPE extends ByteBuf> implements IPro
 
             CompoundTag data = reader.tag().getCompound(reader.prop().getName());
 
+            if(!data.contains("size")) {
+               return reader.prop().getValue();
+            }
+
             int size = data.getInt("size");
+
+            if(size <= 0) {
+                return reader.prop().getValue();
+            }
 
             List<TYPE> list = new ArrayList<>(size);
 
-            Collections.fill(list, defaultValue);
+            for(int i = 0; i < size; i++) {
+                list.add(defaultValue);
+            }
 
             for (int i = 0; i < size; i++) {
 
                 final int index = i;
 
-                singleNbtCodec.decode(NbtOps.INSTANCE, data.getCompound("" + i)).ifSuccess(pair -> list.set(index, pair.getFirst()));
+                singleNbtCodec.decode(NbtOps.INSTANCE, data.get("" + i)).ifSuccess(pair -> list.set(index, pair.getFirst()));
 
             }
 
@@ -142,11 +152,11 @@ public class ListPropertyType <TYPE, BUFFERTYPE extends ByteBuf> implements IPro
     }
 
     @Override
-    public boolean hasChanged(List<TYPE> currentValue, List<TYPE> newValue) {
+    public boolean isEqual(List<TYPE> currentValue, List<TYPE> newValue) {
         return comparison.test(currentValue, newValue);
     }
 
-    public boolean hasSingleChanged(TYPE val1, TYPE val2) {
+    public boolean isSingleEqual(TYPE val1, TYPE val2) {
         return singleComparison.test(val1, val2);
     }
 

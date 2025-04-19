@@ -45,7 +45,7 @@ import net.neoforged.neoforge.client.model.geometry.IUnbakedGeometry;
  */
 public class SlaveNodeModelLoader implements IGeometryLoader<SlaveNodeModelLoader.SlaveNodeGeometry> {
 
-    public static final ResourceLocation ID = Voltaic.rl("electrodynamicsslavenodeloader");
+    public static final ResourceLocation ID = Voltaic.rl("volltaicslavenodeloader");
 
     public static final SlaveNodeModelLoader INSTANCE = new SlaveNodeModelLoader();
 
