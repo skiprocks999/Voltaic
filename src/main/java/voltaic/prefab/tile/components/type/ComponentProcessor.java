@@ -107,7 +107,7 @@ public class ComponentProcessor implements IComponent {
             if (!stack.isEmpty() && stack.getItem() instanceof ItemUpgrade upgrade && !upgrade.subtype.isEmpty) {
                 for (int i = 0; i < stack.getCount(); i++) {
                     for(int j = 0; j < numProcessors; j++) {
-                        upgrade.subtype.applyUpgrade.accept(this, stack, j);
+                        upgrade.subtype.applyUpgrade.accept(getHolder(), stack, j);
                     }
                 }
             }

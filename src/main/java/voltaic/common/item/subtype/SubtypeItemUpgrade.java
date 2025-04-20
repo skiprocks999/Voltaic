@@ -11,7 +11,6 @@ import voltaic.api.ISubtype;
 import voltaic.prefab.tile.GenericTile;
 import voltaic.prefab.tile.components.IComponentType;
 import voltaic.prefab.tile.components.type.ComponentInventory;
-import voltaic.prefab.tile.components.type.ComponentProcessor;
 import voltaic.prefab.utilities.ItemUtils;
 import voltaic.prefab.utilities.NBTUtils;
 import voltaic.prefab.utilities.VoltaicTextUtils;
@@ -48,8 +47,7 @@ public enum SubtypeItemUpgrade implements ISubtype {
 
     // the only way to optimize this one further is to increase the tick delay.
     // Currently, it's set to every 4 ticks
-    iteminput((processor, upgrade, procNumber) -> {
-        GenericTile holder = processor.getHolder();
+    iteminput((holder, upgrade, procNumber) -> {
         ComponentInventory inv = holder.getComponent(IComponentType.Inventory);
 
         if (!inv.hasInputRoom()) {
@@ -89,8 +87,7 @@ public enum SubtypeItemUpgrade implements ISubtype {
 
     }, 1, VoltaicTextUtils.tooltip("upgrade.iteminput")),
     // I can't really optimize this one any more than it is
-    itemoutput((processor, upgrade, index) -> {
-        GenericTile holder = processor.getHolder();
+    itemoutput((holder, upgrade, index) -> {
         ComponentInventory inv = holder.getComponent(IComponentType.Inventory);
         if (!inv.hasItemsInOutput()) {
             return;
@@ -156,14 +153,14 @@ public enum SubtypeItemUpgrade implements ISubtype {
     fortune(3, VoltaicTextUtils.tooltip("upgrade.fortune")),
     unbreaking(3, VoltaicTextUtils.tooltip("upgrade.unbreaking"));
 
-    public final TriConsumer<ComponentProcessor, ItemStack, Integer> applyUpgrade;
+    public final TriConsumer<GenericTile, ItemStack, Integer> applyUpgrade;
     public final int maxSize;
     // does it have an appliable effect?
     public final boolean isEmpty;
 
     public final MutableComponent name;
 
-    SubtypeItemUpgrade(TriConsumer<ComponentProcessor, ItemStack, Integer> applyUpgrade, int maxSize, MutableComponent name) {
+    SubtypeItemUpgrade(TriConsumer<GenericTile, ItemStack, Integer> applyUpgrade, int maxSize, MutableComponent name) {
         this.applyUpgrade = applyUpgrade;
         this.maxSize = maxSize;
         isEmpty = false;
@@ -171,7 +168,7 @@ public enum SubtypeItemUpgrade implements ISubtype {
     }
 
     SubtypeItemUpgrade(int maxStackSize, MutableComponent name) {
-        applyUpgrade = (processor, upgrade, index) -> {
+        applyUpgrade = (holder, upgrade, index) -> {
         };
         maxSize = maxStackSize;
         isEmpty = true;
