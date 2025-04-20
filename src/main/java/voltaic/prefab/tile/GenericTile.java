@@ -2,6 +2,7 @@ package voltaic.prefab.tile;
 
 import java.util.UUID;
 
+import net.neoforged.neoforge.energy.IEnergyStorage;
 import voltaic.Voltaic;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -17,10 +18,7 @@ import voltaic.prefab.properties.variant.AbstractProperty;
 import voltaic.prefab.tile.components.CapabilityInputType;
 import voltaic.prefab.tile.components.IComponent;
 import voltaic.prefab.tile.components.IComponentType;
-import voltaic.prefab.tile.components.type.ComponentElectrodynamic;
-import voltaic.prefab.tile.components.type.ComponentInventory;
-import voltaic.prefab.tile.components.type.ComponentName;
-import voltaic.prefab.tile.components.type.ComponentProcessor;
+import voltaic.prefab.tile.components.type.*;
 import voltaic.prefab.tile.components.utils.IComponentFluidHandler;
 import voltaic.prefab.tile.components.utils.IComponentGasHandler;
 import voltaic.prefab.utilities.ItemUtils;
@@ -212,6 +210,12 @@ public abstract class GenericTile extends BlockEntity implements Nameable, IProp
     public IItemHandler getItemHandlerCapability(@Nullable Direction side) {
         ComponentInventory inv = getComponent(IComponentType.Inventory);
         return inv == null ? null : inv.getCapability(side, CapabilityInputType.NONE);
+    }
+
+    @Nullable
+    public IEnergyStorage getForgeEnergyCapability(@Nullable Direction side) {
+        ComponentForgeEnergy energy = getComponent(IComponentType.ForgeEnergy);
+        return energy == null ? null : energy.getCap(side, CapabilityInputType.NONE);
     }
 
     @Override
