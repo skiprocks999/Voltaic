@@ -205,6 +205,37 @@ public class ListProperty<T> extends AbstractProperty<List<T>, ListPropertyType<
 
     }
 
+    public void removeValue(T value) {
+
+        if (alreadySynced || !getValue().contains(value)) {
+            return;
+        }
+
+        List<T> old = new ArrayList<>(getValue());
+
+        getValue().remove(value);
+
+        PropertyManager manager = getPropertyManager();
+
+        setDirty();
+
+        if (manager.getOwner().getLevel() != null) {
+            if (!manager.getOwner().getLevel().isClientSide()) {
+                if (shouldUpdateOnChange()) {
+                    alreadySynced = true;
+                    manager.getOwner().getLevel().sendBlockUpdated(manager.getOwner().getBlockPos(), manager.getOwner().getBlockState(), manager.getOwner().getBlockState(), Block.UPDATE_CLIENTS);
+                    manager.getOwner().setChanged();
+                    alreadySynced = false;
+                }
+                manager.setDirty(this);
+            } else if(shouldUpdateServer()) {
+                updateServer();
+            }
+            onChange.accept(this, old, -1);
+        }
+
+    }
+
     public void wipeList() {
 
         PropertyManager manager = getPropertyManager();

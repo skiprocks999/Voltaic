@@ -137,6 +137,18 @@ public class PropertyTypes {
             //
     );
 
+    public static final ListPropertyType<String, ByteBuf> STRING_LIST = new ListPropertyType<>(
+            //
+            Objects::equals,
+            //
+            ByteBufCodecs.STRING_UTF8,
+            //
+            Codec.STRING,
+            //
+            ""
+            //
+    );
+
     public static final SinglePropertyType<UUID, ByteBuf> UUID = new SinglePropertyType<>(
             //
             Objects::equals,
