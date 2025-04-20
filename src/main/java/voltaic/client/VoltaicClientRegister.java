@@ -13,6 +13,10 @@ import voltaic.client.particle.lavawithphysics.ParticleLavaWithPhysics;
 import voltaic.client.particle.plasmaball.ParticlePlasmaBall;
 import voltaic.client.guidebook.ReloadListenerResetGuidebook;
 
+import voltaic.client.screen.ScreenDO2OProcessor;
+import voltaic.client.screen.ScreenO2OProcessor;
+import voltaic.client.screen.ScreenO2OProcessorDouble;
+import voltaic.client.screen.ScreenO2OProcessorTriple;
 import voltaic.client.texture.atlas.AtlasHolderVoltaicCustom;
 import voltaic.registers.VoltaicMenuTypes;
 import voltaic.registers.VoltaicParticles;
@@ -68,6 +72,10 @@ public class VoltaicClientRegister {
     @SubscribeEvent
     public static void registerMenus(RegisterMenuScreensEvent event) {
         event.register(VoltaicMenuTypes.CONTAINER_GUIDEBOOK.get(), ScreenGuidebook::new);
+        event.register(VoltaicMenuTypes.CONTAINER_O2OPROCESSOR.get(), ScreenO2OProcessor::new);
+        event.register(VoltaicMenuTypes.CONTAINER_O2OPROCESSORDOUBLE.get(), ScreenO2OProcessorDouble::new);
+        event.register(VoltaicMenuTypes.CONTAINER_O2OPROCESSORTRIPLE.get(), ScreenO2OProcessorTriple::new);
+        event.register(VoltaicMenuTypes.CONTAINER_DO2OPROCESSOR.get(), ScreenDO2OProcessor::new);
     }
 
     @SubscribeEvent
