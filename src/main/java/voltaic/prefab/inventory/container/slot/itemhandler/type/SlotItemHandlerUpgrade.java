@@ -1,38 +1,36 @@
 package voltaic.prefab.inventory.container.slot.itemhandler.type;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import voltaic.common.item.ItemUpgrade;
+import voltaic.common.item.subtype.SubtypeItemUpgrade;
 import voltaic.prefab.inventory.container.slot.itemhandler.SlotItemHandlerGeneric;
 import voltaic.prefab.inventory.container.slot.utils.IUpgradeSlot;
 import voltaic.prefab.screen.component.types.ScreenComponentSlot.IconType;
 import voltaic.prefab.screen.component.types.ScreenComponentSlot.SlotType;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.items.IItemHandler;
 
 public class SlotItemHandlerUpgrade extends SlotItemHandlerGeneric implements IUpgradeSlot {
 
-	private final List<Item> items = new ArrayList<>();
+	private final List<SubtypeItemUpgrade> upgrades;
 
-	public SlotItemHandlerUpgrade(IItemHandler itemHandler, int index, int xPosition, int yPosition, Item... upgrades) {
+	public SlotItemHandlerUpgrade(IItemHandler itemHandler, int index, int xPosition, int yPosition, SubtypeItemUpgrade... upgrades) {
 		super(SlotType.NORMAL, IconType.UPGRADE_DARK, itemHandler, index, xPosition, yPosition);
 
-		items.clear();
-		for (Item upg : upgrades) {
-			items.add(upg);
-		}
+		this.upgrades = Arrays.asList(upgrades);
 
 	}
 
 	@Override
 	public boolean mayPlace(ItemStack stack) {
-		return items.contains(stack.getItem());
+		return stack.getItem() instanceof ItemUpgrade upgrade && upgrades.contains(upgrade);
 	}
 
 	@Override
-	public List<Item> getUpgrades() {
-		return items;
+	public List<SubtypeItemUpgrade> getUpgrades() {
+		return upgrades;
 	}
 
 }

@@ -16,6 +16,8 @@ import net.minecraft.network.codec.StreamCodec;
 
 public class SinglePropertyType<TYPE, BUFFERTYPE> implements IPropertyType<TYPE, BUFFERTYPE> {
 
+    //.ifSuccess(tag -> writer.tag().put(writer.prop().getName(), tag))
+
     private final BiPredicate<TYPE, TYPE> comparison;
 
     private final Consumer<TagWriter<TYPE>> writeToNbt;
@@ -30,10 +32,10 @@ public class SinglePropertyType<TYPE, BUFFERTYPE> implements IPropertyType<TYPE,
                 //
                 packetCodec,
                 //
-                writer -> nbtCodec.encode(writer.prop().getValue(), NbtOps.INSTANCE, new CompoundTag()).ifSuccess(tag -> writer.tag().put(writer.prop().getName(), tag)),
+                writer -> nbtCodec.encode(writer.prop().getValue(), NbtOps.INSTANCE, NbtOps.INSTANCE.empty()).ifSuccess(tag -> writer.tag().put(writer.prop().getName(), tag)),
                 //
                 reader -> {
-                    DataResult<Pair<TYPE, Tag>> result = nbtCodec.decode(NbtOps.INSTANCE, reader.tag().getCompound(reader.prop().getName()));
+                    DataResult<Pair<TYPE, Tag>> result = nbtCodec.decode(NbtOps.INSTANCE, reader.tag().get(reader.prop().getName()));
 
                     return result.isSuccess() ? result.getOrThrow().getFirst() : reader.prop().getValue();
                 }
@@ -66,7 +68,7 @@ public class SinglePropertyType<TYPE, BUFFERTYPE> implements IPropertyType<TYPE,
     }
 
     @Override
-    public boolean hasChanged(TYPE currentValue, TYPE newValue) {
+    public boolean isEqual(TYPE currentValue, TYPE newValue) {
         return comparison.test(currentValue, newValue);
     }
 

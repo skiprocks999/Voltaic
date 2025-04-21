@@ -7,6 +7,10 @@ import voltaic.prefab.utilities.VoltaicTextUtils;
  */
 public class MeasurementUnits {
 
+    public static void init() {
+
+    }
+
     public static final MeasurementUnit PICO = new MeasurementUnit(VoltaicTextUtils.gui("measurementunit.pico.name"), VoltaicTextUtils.gui("measurementunit.pico.symbol"), 1.0E-12D);
     public static final MeasurementUnit NANO = new MeasurementUnit(VoltaicTextUtils.gui("measurementunit.nano.name"), VoltaicTextUtils.gui("measurementunit.nano.symbol"), 1.0E-9D);
     public static final MeasurementUnit MICRO = new MeasurementUnit(VoltaicTextUtils.gui("measurementunit.micro.name"), VoltaicTextUtils.gui("measurementunit.micro.symbol"), 1.0E-6D);

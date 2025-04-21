@@ -99,7 +99,7 @@ public abstract class AbstractProperty<T, PROPERTYTYPE extends IPropertyType> {
         try {
             getType().writeToTag(new IPropertyType.TagWriter<>(this, tag, registries));
         } catch (Exception e) {
-            Voltaic.LOGGER.info("Property " + getName() + " was impropertly cast");
+            Voltaic.LOGGER.info("Catching error while saving property " + getName() + " from NBT. Error: " + e.getMessage());
         }
     }
 
@@ -111,7 +111,7 @@ public abstract class AbstractProperty<T, PROPERTYTYPE extends IPropertyType> {
                 onLoadedFromTag(this, value);
             }
         } catch (Exception e) {
-            Voltaic.LOGGER.info("Property " + getName() + " was impropertly cast");
+            Voltaic.LOGGER.info("Catching error while loading property " + getName() + " from NBT. Error: " + e.getMessage());
         }
     }
     public abstract void onTileLoaded();

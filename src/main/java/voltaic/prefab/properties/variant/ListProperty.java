@@ -1,8 +1,12 @@
 package voltaic.prefab.properties.variant;
 
+import net.minecraft.core.HolderLookup;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.Block;
 import org.apache.commons.lang3.function.TriConsumer;
+import voltaic.Voltaic;
 import voltaic.prefab.properties.PropertyManager;
+import voltaic.prefab.properties.types.IPropertyType;
 import voltaic.prefab.properties.types.ListPropertyType;
 
 import java.util.ArrayList;
@@ -77,6 +81,36 @@ public class ListProperty<T> extends AbstractProperty<List<T>, ListPropertyType<
         }
     }
 
+    public void addValue(Object updated) {
+        if (alreadySynced || updated == null) {
+            return;
+        }
+
+        List<T> old = new ArrayList<>(getValue());
+
+        getValue().add((T) updated);
+
+        PropertyManager manager = getPropertyManager();
+
+        setDirty();
+
+        if (manager.getOwner().getLevel() != null) {
+            if (!manager.getOwner().getLevel().isClientSide()) {
+                if (shouldUpdateOnChange()) {
+                    alreadySynced = true;
+                    manager.getOwner().getLevel().sendBlockUpdated(manager.getOwner().getBlockPos(), manager.getOwner().getBlockState(), manager.getOwner().getBlockState(), Block.UPDATE_CLIENTS);
+                    manager.getOwner().setChanged();
+                    alreadySynced = false;
+                }
+                manager.setDirty(this);
+            } else if(shouldUpdateServer()) {
+                updateServer();
+            }
+            onChange.accept(this, old, -1);
+        }
+
+    }
+
     public void addValue(Object updated, int index) {
 
         if (alreadySynced || updated == null) {
@@ -108,6 +142,38 @@ public class ListProperty<T> extends AbstractProperty<List<T>, ListPropertyType<
 
     }
 
+    public void addValues(List<?> updated) {
+        if (alreadySynced || updated == null) {
+            return;
+        }
+
+        List<T> old = new ArrayList<>(getValue());
+
+        for(Object obj : updated) {
+            getValue().add((T) obj);
+        }
+
+        PropertyManager manager = getPropertyManager();
+
+        setDirty();
+
+        if (manager.getOwner().getLevel() != null) {
+            if (!manager.getOwner().getLevel().isClientSide()) {
+                if (shouldUpdateOnChange()) {
+                    alreadySynced = true;
+                    manager.getOwner().getLevel().sendBlockUpdated(manager.getOwner().getBlockPos(), manager.getOwner().getBlockState(), manager.getOwner().getBlockState(), Block.UPDATE_CLIENTS);
+                    manager.getOwner().setChanged();
+                    alreadySynced = false;
+                }
+                manager.setDirty(this);
+            } else if(shouldUpdateServer()) {
+                updateServer();
+            }
+            onChange.accept(this, old, -1);
+        }
+
+    }
+
     public void removeValue(int index) {
 
         if (alreadySynced || index >= getValue().size()) {
@@ -135,6 +201,37 @@ public class ListProperty<T> extends AbstractProperty<List<T>, ListPropertyType<
                 updateServer();
             }
             onChange.accept(this, old, index);
+        }
+
+    }
+
+    public void removeValue(T value) {
+
+        if (alreadySynced || !getValue().contains(value)) {
+            return;
+        }
+
+        List<T> old = new ArrayList<>(getValue());
+
+        getValue().remove(value);
+
+        PropertyManager manager = getPropertyManager();
+
+        setDirty();
+
+        if (manager.getOwner().getLevel() != null) {
+            if (!manager.getOwner().getLevel().isClientSide()) {
+                if (shouldUpdateOnChange()) {
+                    alreadySynced = true;
+                    manager.getOwner().getLevel().sendBlockUpdated(manager.getOwner().getBlockPos(), manager.getOwner().getBlockState(), manager.getOwner().getBlockState(), Block.UPDATE_CLIENTS);
+                    manager.getOwner().setChanged();
+                    alreadySynced = false;
+                }
+                manager.setDirty(this);
+            } else if(shouldUpdateServer()) {
+                updateServer();
+            }
+            onChange.accept(this, old, -1);
         }
 
     }
@@ -177,12 +274,24 @@ public class ListProperty<T> extends AbstractProperty<List<T>, ListPropertyType<
     private boolean checkForChange(T updated, int index) {
         boolean shouldUpdate = value.get(index) == null && updated != null;
         if (value.get(index) != null && updated != null) {
-            shouldUpdate = !getType().hasSingleChanged(value.get(index), updated);
+            shouldUpdate = !getType().isSingleEqual(value.get(index), updated);
         }
         if (shouldUpdate) {
             setDirty();
         }
         return shouldUpdate;
+    }
+
+    public void loadFromTag(CompoundTag tag, HolderLookup.Provider registries) {
+        try {
+            List<T> data = (List<T>) getType().readFromTag(new IPropertyType.TagReader(this, tag, registries));
+            if (data != null) {
+                value = data;
+                onLoadedFromTag(this, value);
+            }
+        } catch (Exception e) {
+            Voltaic.LOGGER.info("Catching error while loading property " + getName() + " from NBT. Error: " + e.getMessage());
+        }
     }
 
 }

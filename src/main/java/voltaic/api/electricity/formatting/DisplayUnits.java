@@ -39,4 +39,7 @@ public class DisplayUnits {
 
     public static final DisplayUnit FORGE_ENERGY_UNIT = new DisplayUnit(VoltaicTextUtils.gui("displayunit.forgeenergyunit.name"), VoltaicTextUtils.gui("displayunit.forgeenergyunit.nameplural"), VoltaicTextUtils.gui("displayunit.forgeenergyunit.symbol"));
 
+    public static final DisplayUnit RAD = new DisplayUnit(VoltaicTextUtils.gui("displayunit.radname"), VoltaicTextUtils.gui("displayunit.radnameplural"), VoltaicTextUtils.gui("displayunit.radsymbol"));
+
+
 }

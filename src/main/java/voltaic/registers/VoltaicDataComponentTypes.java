@@ -40,7 +40,7 @@ public class VoltaicDataComponentTypes {
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> ON = DATA_COMPONENT_TYPES.register(NBTUtils.ON, () -> DataComponentType.<Boolean>builder().persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL).cacheEncoding().build());
 
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> USED = DATA_COMPONENT_TYPES.register(NBTUtils.USED, () -> DataComponentType.<Boolean>builder().persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL).cacheEncoding().build());
-
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> HURT = DATA_COMPONENT_TYPES.register("washurt", () -> DataComponentType.<Boolean>builder().persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL).cacheEncoding().build());
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> SMART = DATA_COMPONENT_TYPES.register(NBTUtils.SMART, () -> DataComponentType.<Boolean>builder().persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL).cacheEncoding().build());
 
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> RESET = DATA_COMPONENT_TYPES.register("reset", () -> DataComponentType.<Boolean>builder().persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL).cacheEncoding().build());

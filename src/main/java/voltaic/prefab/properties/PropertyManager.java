@@ -130,6 +130,7 @@ public class PropertyManager {
 			return;
 		}
 		prop.overwriteValue(prop.getType().readFromTag(new IPropertyType.TagReader(prop, data, owner.getLevel().registryAccess())));
+		owner.setChanged();
 	}
 
 	public void onTileLoaded() {

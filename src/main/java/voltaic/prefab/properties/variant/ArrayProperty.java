@@ -1,9 +1,13 @@
 package voltaic.prefab.properties.variant;
 
+import net.minecraft.core.HolderLookup;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.Block;
 import org.apache.commons.lang3.function.TriConsumer;
+import voltaic.Voltaic;
 import voltaic.prefab.properties.PropertyManager;
 import voltaic.prefab.properties.types.ArrayPropertyType;
+import voltaic.prefab.properties.types.IPropertyType;
 
 import java.util.Arrays;
 import java.util.function.Consumer;
@@ -88,12 +92,24 @@ public class ArrayProperty<T> extends AbstractProperty<T[], ArrayPropertyType<T,
     private boolean checkForChange(T updated, int index) {
         boolean shouldUpdate = value[index] == null && updated != null;
         if (value[index] != null && updated != null) {
-            shouldUpdate = !getType().hasSingleChanged(value[index], updated);
+            shouldUpdate = !getType().isSingleEqual(value[index], updated);
         }
         if (shouldUpdate) {
             setDirty();
         }
         return shouldUpdate;
+    }
+
+    public void loadFromTag(CompoundTag tag, HolderLookup.Provider registries) {
+        try {
+            T[] data = (T[]) getType().readFromTag(new IPropertyType.TagReader(this, tag, registries));
+            if (data != null) {
+                value = data;
+                onLoadedFromTag(this, value);
+            }
+        } catch (Exception e) {
+            Voltaic.LOGGER.info("Catching error while loading property " + getName() + " from NBT. Error: " + e.getMessage());
+        }
     }
 
 }

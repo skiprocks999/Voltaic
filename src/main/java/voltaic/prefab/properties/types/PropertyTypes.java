@@ -1,6 +1,5 @@
 package voltaic.prefab.properties.types;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -12,7 +11,6 @@ import voltaic.prefab.utilities.object.Location;
 import voltaic.prefab.utilities.object.TransferPack;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.NonNullList;
 import net.minecraft.core.UUIDUtil;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -73,6 +71,28 @@ public class PropertyTypes {
             //
     );
 
+    public static final ListPropertyType<Integer, ByteBuf> INTEGER_LIST = new ListPropertyType<>(
+            //
+            Objects::equals,
+            //
+            ByteBufCodecs.INT,
+            //
+            Codec.INT,
+            //
+            0
+            //
+    );
+
+    public static final SetPropertyType<Integer, ByteBuf> INTEGER_SET = new SetPropertyType<>(
+            //
+            Objects::equals,
+            //
+            ByteBufCodecs.INT,
+            //
+            Codec.INT
+            //
+    );
+
     public static final SinglePropertyType<Long, ByteBuf> LONG = new SinglePropertyType<>(
             //
             Objects::equals,
@@ -114,6 +134,18 @@ public class PropertyTypes {
             new Double[0],
             //
             0.0D
+            //
+    );
+
+    public static final ListPropertyType<String, ByteBuf> STRING_LIST = new ListPropertyType<>(
+            //
+            Objects::equals,
+            //
+            ByteBufCodecs.STRING_UTF8,
+            //
+            Codec.STRING,
+            //
+            ""
             //
     );
 
