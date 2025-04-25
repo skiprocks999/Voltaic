@@ -25,7 +25,7 @@ public class SlotItemHandlerUpgrade extends SlotItemHandlerGeneric implements IU
 
 	@Override
 	public boolean mayPlace(ItemStack stack) {
-		return stack.getItem() instanceof ItemUpgrade upgrade && upgrades.contains(upgrade);
+		return stack.getItem() instanceof ItemUpgrade upgrade && upgrades.contains(upgrade.subtype);
 	}
 
 	@Override
