@@ -13,6 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 import voltaic.client.VoltaicClientRegister;
 import voltaic.common.block.states.VoltaicBlockStates;
+import voltaic.common.condition.ConfigCondition;
 import voltaic.common.packet.NetworkHandler;
 import voltaic.common.packet.types.client.PacketResetGuidebookPages;
 import voltaic.common.settings.VoltaicConstants;
@@ -24,6 +25,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.OnDatapackSyncEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -35,6 +37,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.PacketDistributor.PacketTarget;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegisterEvent;
 
 import javax.annotation.Nullable;
 
@@ -84,6 +88,13 @@ public class Voltaic {
         // ElectrodynamicsGases.MAPPED_GASSES.putAll(map.fluidToGasMap);
 
     }
+    
+    @SubscribeEvent
+	public static void registerConditions(RegisterEvent event) {
+		if (event.getRegistryKey().equals(ForgeRegistries.Keys.RECIPE_SERIALIZERS)) {
+			CraftingHelper.register(ConfigCondition.Serializer.INSTANCE);
+		}
+	}
 
     // I wonder how long this bug has been there
     @SubscribeEvent
