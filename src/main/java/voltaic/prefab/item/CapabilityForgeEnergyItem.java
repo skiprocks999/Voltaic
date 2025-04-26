@@ -47,6 +47,6 @@ public class CapabilityForgeEnergyItem implements IEnergyStorage {
 
     @Override
     public boolean canReceive() {
-        return canExtract;
+        return canRecieve;
     }
 }
