@@ -1,5 +1,7 @@
 package voltaic.common.item;
 
+import java.util.function.Supplier;
+
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -7,7 +9,6 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.RegistryObject;
 import voltaic.api.radiation.RadiationSystem;
 import voltaic.api.radiation.SimpleRadiationSource;
 import voltaic.api.radiation.util.IRadiationRecipient;
@@ -18,7 +19,7 @@ import voltaic.registers.VoltaicCapabilities;
 
 public class ItemRadioactive extends ItemVoltaic {
 
-    public ItemRadioactive(Item.Properties properties, RegistryObject<CreativeModeTab> creativeTab) {
+    public ItemRadioactive(Item.Properties properties, Supplier<CreativeModeTab> creativeTab) {
         super(properties, creativeTab);
     }
 

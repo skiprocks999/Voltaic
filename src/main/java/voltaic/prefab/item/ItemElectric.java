@@ -2,6 +2,7 @@ package voltaic.prefab.item;
 
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 import voltaic.api.electricity.formatting.ChatFormatter;
 import voltaic.api.electricity.formatting.DisplayUnits;
@@ -20,14 +21,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ItemElectric extends ItemVoltaic implements IItemElectric {
 
 	private final ElectricItemProperties properties;
 	private final Function<Item, Item> getBatteryItem;
 
-	public ItemElectric(ElectricItemProperties properties, RegistryObject<CreativeModeTab> creativeTab, Function<Item, Item> getBatteryItem) {
+	public ItemElectric(ElectricItemProperties properties, Supplier<CreativeModeTab> creativeTab, Function<Item, Item> getBatteryItem) {
 		super(properties, creativeTab);
 		this.properties = properties;
 		this.getBatteryItem = getBatteryItem;

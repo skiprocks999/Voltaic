@@ -1,6 +1,9 @@
 package voltaic.common.item;
 
 import voltaic.registers.VoltaicEffects;
+
+import java.util.function.Supplier;
+
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
@@ -14,13 +17,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ItemIodineTablet extends ItemVoltaic {
 
     public static final int TIME_MINUTES = 5;
     private static final int TIME = TIME_MINUTES * 60 * 20;
-    public ItemIodineTablet(Properties properties, RegistryObject<CreativeModeTab> creativeTab) {
+    public ItemIodineTablet(Properties properties, Supplier<CreativeModeTab> creativeTab) {
         super(properties, creativeTab);
     }
 

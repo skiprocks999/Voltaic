@@ -1,6 +1,7 @@
 package voltaic.common.item.gear;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 import voltaic.common.inventory.container.ContainerGuidebook;
 import voltaic.common.item.ItemVoltaic;
@@ -17,14 +18,13 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ItemGuidebook extends ItemVoltaic {
 
 	private static final String LINK = "https://wiki.aurilis.dev";
 	private static final Component CONTAINER_TITLE = Component.translatable("container.guidebook");
 
-	public ItemGuidebook(Properties properties, RegistryObject<CreativeModeTab> creativeTab) {
+	public ItemGuidebook(Properties properties, Supplier<CreativeModeTab> creativeTab) {
 		super(properties, creativeTab);
 	}
 

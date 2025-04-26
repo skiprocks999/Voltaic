@@ -1,6 +1,9 @@
 package voltaic.common.item;
 
 import voltaic.registers.VoltaicEffects;
+
+import java.util.function.Supplier;
+
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
@@ -13,11 +16,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ItemAntidote extends ItemVoltaic {
 
-    public ItemAntidote(Properties properties, RegistryObject<CreativeModeTab> creativeTab) {
+    public ItemAntidote(Properties properties, Supplier<CreativeModeTab> creativeTab) {
         super(properties, creativeTab);
     }
 

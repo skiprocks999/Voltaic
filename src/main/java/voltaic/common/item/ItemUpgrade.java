@@ -2,6 +2,7 @@ package voltaic.common.item;
 
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.function.Supplier;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.CreativeModeTab;
@@ -23,14 +24,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ItemUpgrade extends ItemVoltaic {
 	public final SubtypeItemUpgrade subtype;
 
 	private static final DecimalFormat FORMATTER = new DecimalFormat("0.00");
 
-	public ItemUpgrade(Properties properties, SubtypeItemUpgrade subtype, RegistryObject<CreativeModeTab> creativeTab) {
+	public ItemUpgrade(Properties properties, SubtypeItemUpgrade subtype, Supplier<CreativeModeTab> creativeTab) {
 		super(properties.stacksTo(subtype.maxSize), creativeTab);
 		this.subtype = subtype;
 	}

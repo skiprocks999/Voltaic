@@ -1,5 +1,7 @@
 package voltaic.common.fluid;
 
+import java.util.function.Supplier;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;
@@ -13,14 +15,13 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.fluids.FluidType;
-import net.minecraftforge.registries.RegistryObject;
 
 public class FluidNonPlaceable extends Fluid {
 
-	private final RegistryObject<Item> bucket;
+	private final Supplier<? extends Item> bucket;
 	private final FluidType type;
 
-	public FluidNonPlaceable(RegistryObject<Item> bucket, FluidType type) {
+	public FluidNonPlaceable(Supplier<? extends Item> bucket, FluidType type) {
 		this.bucket = bucket;
 		this.type = type;
 	}

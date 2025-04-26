@@ -1,6 +1,7 @@
 package voltaic.common.item.gear;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 import voltaic.api.creativetab.CreativeTabSupplier;
 import net.minecraft.world.entity.Entity;
@@ -10,13 +11,12 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ItemVoltaicArmor extends ArmorItem implements CreativeTabSupplier {
 
-	private final RegistryObject<CreativeModeTab> creativeTab;
+	private final Supplier<CreativeModeTab> creativeTab;
 
-	public ItemVoltaicArmor(ArmorMaterial material, Type type, Properties properties, RegistryObject<CreativeModeTab> creativeTab) {
+	public ItemVoltaicArmor(ArmorMaterial material, Type type, Properties properties, Supplier<CreativeModeTab> creativeTab) {
 		super(material, type, properties);
 		this.creativeTab = creativeTab;
 	}
